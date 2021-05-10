@@ -1,3 +1,3 @@
-# not_my_cat
+# Not My Cat
 ✧/ᐠ-ꞈ-ᐟ\
  
