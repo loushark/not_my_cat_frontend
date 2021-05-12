@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import App from '../../App';
 
 describe('loginButton', () => {
-  const wrapper = shallow(<App />);
+  
 
 
 })

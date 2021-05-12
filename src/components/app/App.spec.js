@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import App from '../../App';
 
 describe('app', () => {
@@ -25,8 +25,12 @@ describe('app', () => {
     expect(wrapper.exists('.latest-cats')).toEqual(true)
   })
 
+})
+
+describe('buttons', () => {
+  const wrapper = mount(<App />);
+
   it('has a login button', () => {
-    // async await? hasn't loaded LoginButton yet but has rendered App?
     expect(wrapper.exists('.login-button')).toEqual(true)
   })
 })
