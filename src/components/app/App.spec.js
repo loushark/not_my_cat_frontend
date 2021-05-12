@@ -33,4 +33,16 @@ describe('buttons', () => {
   it('has a login button', () => {
     expect(wrapper.exists('.login-button')).toEqual(true)
   })
+
+  it('has a sign up button', () => {
+    expect(wrapper.exists('.SignUp-button')).toEqual(true)
+  })
+})
+
+describe('forms', () => {
+  const wrapper = mount(<App />);
+
+  it('has a sign up form', () => {
+    expect(wrapper.exists('.SignUp-form')).toEqual(true)
+  })
 })

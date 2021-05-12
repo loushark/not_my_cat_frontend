@@ -8,5 +8,4 @@ describe('loginButton', () => {
   it('returns a login button displayed on the page', () => {
   expect(login).toMatchObject(<button className="login-button">Login</button>)
 })
-
 })

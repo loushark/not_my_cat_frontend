@@ -3,6 +3,7 @@ import logo from './bobcat.png';
 import './App.css';
 import LoginButton from './components/LoginButton/LoginButton.js'
 import SignUpButton from './components/SignUpButton/SignUpButton.js'
+import SignUpForm from './components/SignUpForm/SignUpForm.js'
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <p className="latest-cats">
             Hot new cats in town...
           </p>
+          <SignUpForm />
         </div>
     </div>
 
