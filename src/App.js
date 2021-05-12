@@ -9,17 +9,15 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1>Not My Cat</h1> 
+        <h1>Not My Cat</h1>
         <div />
       <LoginButton />
       </header>
-      <body>
         <div>
           <p className="latest-cats">
             Hot new cats in town...
           </p>
         </div>
-      </body>
     </div>
 
   );
