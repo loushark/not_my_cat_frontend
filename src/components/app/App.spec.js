@@ -24,4 +24,9 @@ describe('app', () => {
   it('has a p statment when a user is not logged in', () => {
     expect(wrapper.exists('.latest-cats')).toEqual(true)
   })
+
+  it('has a login button', () => {
+    // async await? hasn't loaded LoginButton yet but has rendered App?
+    expect(wrapper.exists('.login-button')).toEqual(true)
+  })
 })
