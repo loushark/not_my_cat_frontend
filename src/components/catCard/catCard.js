@@ -2,7 +2,7 @@ import React from 'react';
 import logo from '../../bobcat.png';
 import '../../App.css';
 
-function Cat() {
+const Cat = () => {
   return (
     <div className="Cat-id">
       <header className="Cat-header">
