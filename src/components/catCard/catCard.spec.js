@@ -36,4 +36,12 @@ describe('catCard', () => {
   it('has 3 rows', () => {
     expect(wrapper.find('tr').length).toEqual(3)
   })
+
+  it('has 3 table headers', () => {
+    expect(wrapper.find('th').length).toEqual(3)
+  })
+
+  it('has 3 table data entries', () => {
+    expect(wrapper.find('td').length).toEqual(3)
+  })
 })
