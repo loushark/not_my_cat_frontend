@@ -1,8 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 const SignUpButton = () => {
+
   return (
-    <button className="SignUp-button">Sign Up</button>
+    <div>
+    <Link to="/signup" className="Signup-button">Sign Up</Link>
+    </div>
   );
 };
 

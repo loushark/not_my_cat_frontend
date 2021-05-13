@@ -1,8 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const LogoutButton = () => {
   return (
-    <button className="logout-button">Login</button>
+    <div>
+    <Link to="/login" className="Login-button">Logout</Link>
+    </div>
   );
 };
 

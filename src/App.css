@@ -2,9 +2,16 @@
   text-align: center;
 }
 
-body {
-  margin: 0;
+a {
+  margin: 5px;
+  padding: 5px;
+  background-color: white;
+  border-radius: 10px;
+  font-size: 15px;
+  text-decoration: none;
+  font-family: 'Comic Sans MS';
 }
+
 .App-logo {
   height: 8vmin;
   pointer-events: none;
@@ -22,6 +29,7 @@ body {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  font-family: 'Comic Sans MS';
 }
 
 .App-link {
