@@ -24,4 +24,8 @@ describe('catCard', () => {
   it('has an image class', () => {
     expect(wrapper.exists('.Cat-image')).toEqual(true)
   })
+
+  it('has a name', () => {
+    expect(wrapper.exists('h2')).toEqual(true)
+  })
 })

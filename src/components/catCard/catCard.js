@@ -8,6 +8,7 @@ function Cat() {
     <header className="Cat-header"/>
     <h1>Spotted By:</h1>
     <img src={logo} className="Cat-image"/>
+    <h2>Name</h2>
     <div>
     </div>
     </div>
