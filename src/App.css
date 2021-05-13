@@ -29,6 +29,28 @@
   color: #61dafb;
 }
 
+/*catCard styling*/
+
+.Cat-id {
+  width: 300px;
+  background-color: grey;
+  border: 2px solid black;
+  border-radius: 20px;
+  align-items: center;
+  margin: 10px;
+}
+
+.Cat-table {
+  /* margin: 20px; */
+  display: grid;
+  justify-content: center;
+}
+
+.Cat-image {
+  width: 200px;
+}
+
+
 /* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

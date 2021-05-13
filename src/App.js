@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './bobcat.png';
 import './App.css';
+import Cat from './components/catCard/catCard.js'
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <p className="latest-cats">
             Hot new cats in town...
           </p>
+          <Cat/>
         </div>
       </body>
     </div>
