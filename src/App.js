@@ -8,7 +8,7 @@ import SignUpForm from './components/SignUpForm/SignUpForm.js'
 import LoginForm from './components/LoginForm/LoginForm.js'
 import CreateCatCardButton from './components/CreateCatCardButton/CreateCatCardButton.js'
 import CreateCatCard from './components/CreateCatCard/CreateCatCard.js'
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 export const AuthContext = React.createContext();
 
@@ -63,7 +63,7 @@ export default function App() {
         <Router>
           <header className="App-header">
               <img src={logo} className="App-logo" alt="logo" />
-              <h1>Not My Cat</h1>
+              <Link to="/"><h1>Not My Cat</h1></Link>
           </header>
           <div className="nav">
             {!state.isAuthenticated ? <>

@@ -8,6 +8,8 @@ html {
 
 a {
   font-family: 'Fira Sans', sans-serif;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
 }
 
 .App-logo {
@@ -27,6 +29,7 @@ a {
   font-size: calc(10px + 2vmin);
   color: white;
   font-family: 'Fira Sans', sans-serif;
+  text-decoration: none;
 }
 
 .App-link {
