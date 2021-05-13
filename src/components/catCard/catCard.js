@@ -8,7 +8,7 @@ function Cat() {
       <header className="Cat-header">
         <h1>Spotted By:</h1>
       </header>
-      <img src={logo} className="Cat-image"/>
+      <img src={logo} className="Cat-image" alt="cat"/>
       <h2>Name</h2>
       <div className="Cat-attributes">
         <table className="Cat-table">

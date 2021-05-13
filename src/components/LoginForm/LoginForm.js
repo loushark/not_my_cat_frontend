@@ -58,7 +58,7 @@ const LoginForm = (props) => {
       onChange={element => onChange(element)}/>
       <br />
       <br />
-      <input type="submit" />
+      <input type="submit" className="button"/>
     </form>
   </div>
   );

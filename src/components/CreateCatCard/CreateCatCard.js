@@ -20,7 +20,7 @@ const CreateCatCard = () => {
       <input type="text" placeholder="Attribute 3" />
       <br />
       <br />
-      <input type="submit" />
+      <input type="submit" className="button"/>
     </form>
   </div>
   );

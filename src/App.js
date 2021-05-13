@@ -62,15 +62,16 @@ export default function App() {
       <div className="App">
         <Router>
           <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1>Not My Cat</h1>
-            <div />
+              <img src={logo} className="App-logo" alt="logo" />
+              <h1>Not My Cat</h1>
+          </header>
+          <div className="nav">
             {!state.isAuthenticated ? <>
             <LoginButton />
             <SignUpButton />
-            </> : <LogoutButton />}
-          </header>
-          <CreateCatCardButton />
+            </> : <><LogoutButton />
+            <CreateCatCardButton /></>}
+          </div>
           {!state.isAuthenticated ? <p className="latest-cats">Login to see all the latest cats</p> 
           : <p className="latest-cats">Here are all the finest picks!</p>}
           <div>

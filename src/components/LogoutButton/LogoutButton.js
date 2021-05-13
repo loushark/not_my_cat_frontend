@@ -8,9 +8,9 @@ const LogoutButton = (props) => {
   const { dispatch } = React.useContext(AuthContext);
  
   return (
-    <div>
-    <Link to="/" className="Logout-button" onClick={() => dispatch({type: "LOGOUT"})}>Logout</Link>
-    </div>
+    <>
+    <Link to="/" className="button" onClick={() => dispatch({type: "LOGOUT"})}>Logout</Link>
+    </>
   );
 };
 
