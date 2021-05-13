@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { AuthContext } from "../../App";
 import axios from 'axios';
 
 const LoginForm = (props) => {
 
+  const { dispatch } = React.useContext(AuthContext);
   const [userData, setUserData] = useState({
     username: '',
     password: ''
@@ -20,10 +22,15 @@ const LoginForm = (props) => {
     axios.post('http://127.0.0.1:8082/api/login', userData)
     .then(response => {
       if (response.status === 200) {
-        localStorage.setItem("not-my-cat-token", response.data.accessToken)
-        console.log(response)
-        props.history.push('/')
-      }
+        return response      }
+    })
+    .then(res => {
+      console.log(res.data)
+      dispatch({
+        type: "LOGIN",
+        data: res.data
+      })
+      props.history.push('/')
     })
     .catch(error => {
       setInvalid(true)

@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from "../../App";
 
-const LogoutButton = () => {
+
+const LogoutButton = (props) => {
+
+  const { dispatch } = React.useContext(AuthContext);
  
-  const onClick = () => {
-    localStorage.removeItem("not-my-cat-token")
-  }
-
   return (
     <div>
-    <Link to="/" className="Logout-button" onClick={onClick()}>Logout</Link>
+    <Link to="/" className="Logout-button" onClick={() => dispatch({type: "LOGOUT"})}>Logout</Link>
     </div>
   );
 };
