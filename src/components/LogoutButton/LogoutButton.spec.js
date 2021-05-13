@@ -8,7 +8,7 @@ describe('logoutButton', () => {
   const logout = LogoutButton()
   it('returns a logout button displayed on the page', () => {
   expect(logout).toMatchObject(<div>
-  <Link to="/login" className="Logout-button">Logout</Link>
+  <Link to="/" className="Logout-button">Logout</Link>
   </div>)
 })
 })

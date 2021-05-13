@@ -7,12 +7,22 @@ describe('Sign up form', () => {
   const signUp = SignUpForm()
   it('displays a user sign up form on the page', () => {
   expect(signUp).toMatchObject(
-    <form className="SignUp-form" >
-      <input type="text" placeholder="Username" />
-      <input type="email" placeholder="Email" />
-      <input type="password" placeholder="Password" />
-      <input type="submit" />
-    </form>)
+    <div>
+      <h3>Sign up to add your cats!</h3>
+
+      <form className="SignUp-form">
+        <input type="text" placeholder="Username" />
+        <br />
+        <br />
+        <input type="email" placeholder="Email" />
+        <br />
+        <br />
+        <input type="password" placeholder="Password" />
+        <br />
+        <br />
+        <input type="submit" />
+      </form>
+      </div>)
 })
 
 })

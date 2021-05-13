@@ -1,6 +1,8 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import App from '../../App';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
 
 describe('app', () => {
   const wrapper = shallow(<App />);
@@ -41,7 +43,7 @@ describe('buttons', () => {
 
 describe('forms', () => {
   const wrapper = mount(<App />);
-
+  click(Sign Up);
   it('has a sign up form', () => {
     expect(wrapper.exists('.SignUp-form')).toEqual(true)
   })
