@@ -1,17 +1,14 @@
 import React from 'react';
 
 
-const SignUpForm = () => {
+const LoginForm = () => {
   return (
 
   <div>
-    <h3>Sign up to add your cats!</h3>
+    <h3>Login to add your cats!</h3>
 
-    <form className="SignUp-form">
+    <form className="Login-form">
       <input type="text" placeholder="Username" />
-      <br />
-      <br />
-      <input type="email" placeholder="Email" />
       <br />
       <br />
       <input type="password" placeholder="Password" />
@@ -19,9 +16,8 @@ const SignUpForm = () => {
       <br />
       <input type="submit" />
     </form>
-    </div>
-
+  </div>
   );
 };
 
-export default SignUpForm;
+export default LoginForm;
