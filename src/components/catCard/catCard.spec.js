@@ -25,7 +25,11 @@ describe('catCard', () => {
     expect(wrapper.exists('.Cat-image')).toEqual(true)
   })
 
-  it('has a name', () => {
+  it('has a name tag', () => {
     expect(wrapper.exists('h2')).toEqual(true)
+  })
+
+  it('has a table for cattributes', () => {
+    expect(wrapper.exists('table')).toEqual(true)
   })
 })
