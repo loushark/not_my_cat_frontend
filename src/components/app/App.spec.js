@@ -39,6 +39,14 @@ describe('buttons', () => {
   it('has a sign up button', () => {
     expect(wrapper.exists('.SignUp-button')).toEqual(true)
   })
+
+  it('has a logout button', () => {
+    expect(wrapper.exists('.logout-button')).toEqual(true)
+  })
+
+  it('has a add a cat button', () => {
+    expect(wrapper.exists('.NewCat-button')).toEqual(true)
+  })
 })
 
 describe('forms', () => {
