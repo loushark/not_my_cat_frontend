@@ -63,7 +63,7 @@ export default function App() {
         <Router>
           <header className="App-header">
               <img src={logo} className="App-logo" alt="logo" />
-              <Link to="/"><h1>Not My Cat</h1></Link>
+              <Link to="/"><h1 className="title">Not My Cat</h1></Link>
           </header>
           <div className="nav">
             {!state.isAuthenticated ? <>
@@ -72,6 +72,10 @@ export default function App() {
             </> : <><LogoutButton />
             <CreateCatCardButton /></>}
           </div>
+          <div className="nav">
+            {state.isAuthenticated && <h3>what up {state.user}</h3> }
+          </div>
+          
           {!state.isAuthenticated ? <p className="latest-cats">Login to see all the latest cats</p> 
           : <p className="latest-cats">Here are all the finest picks!</p>}
           <div>

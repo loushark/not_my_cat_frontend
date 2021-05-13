@@ -1,15 +1,19 @@
-html {
-  display: grid;
-}
-
 .App {
   text-align: center;
 }
 
-a {
+link h1 {
+  text-decoration: none;
+}
+
+.title {
   font-family: 'Fira Sans', sans-serif;
   text-decoration: none;
   color: rgb(255, 255, 255);
+}
+
+a {
+  font-family: 'Fira Sans', sans-serif;
 }
 
 .App-logo {
@@ -57,7 +61,6 @@ input {
   text-decoration: none;
   font-family: 'Fira Sans', sans-serif;
   transition-duration: 0.4s;
-  overflow: visible;
 }
 
 .button:hover {
