@@ -1,8 +1,6 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import App from '../../App';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-
 
 describe('app', () => {
   const wrapper = shallow(<App />);
@@ -26,22 +24,21 @@ describe('app', () => {
   it('has a p statment when a user is not logged in', () => {
     expect(wrapper.exists('.latest-cats')).toEqual(true)
   })
-
 })
 
 describe('buttons', () => {
   const wrapper = mount(<App />);
 
   it('has a login button', () => {
-    expect(wrapper.exists('.login-button')).toEqual(true)
+    expect(wrapper.exists('.Login-button')).toEqual(true)
   })
 
   it('has a sign up button', () => {
-    expect(wrapper.exists('.SignUp-button')).toEqual(true)
+    expect(wrapper.exists('.Signup-button')).toEqual(true)
   })
 
   it('has a logout button', () => {
-    expect(wrapper.exists('.logout-button')).toEqual(true)
+    expect(wrapper.exists('.Logout-button')).toEqual(true)
   })
 
   it('has a add a cat button', () => {
@@ -50,9 +47,11 @@ describe('buttons', () => {
 })
 
 describe('forms', () => {
-  const wrapper = mount(<App />);
-  click(Sign Up);
   it('has a sign up form', () => {
+    const wrapper = mount(<App />);
+    const signUpButton = wrapper.find('SignUpButton').at(0)
+    signUpButton.simulate('click')
+
     expect(wrapper.exists('.SignUp-form')).toEqual(true)
   })
 })
