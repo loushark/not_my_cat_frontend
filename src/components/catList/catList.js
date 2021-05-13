@@ -10,7 +10,7 @@ const CatList = () => {
   return (
     <div className="cat-list">
     {cats.map((cat)=> (
-      <Cat key={`cat-${cat.catName}`} {...cat} />
+      <Cat key={`cat-${cat.id}`} {...cat} />
       // need to refactor this iteration so it prints in the Cat function
     ))}
     </div>

@@ -2,14 +2,14 @@ import React from 'react';
 import logo from '../../bobcat.png';
 import '../../App.css';
 
-const Cat = ({ name, userId }) => {
+const Cat = ({ catName, user_id }) => {
   return (
     <div className="Cat-id">
       <header className="Cat-header">
-        <h1>Spotted By:{userId}</h1>
+        <h1>Spotted By: {user_id}</h1>
       </header>
       <img src={logo} className="Cat-image" alt="cat"/>
-      <h2>{name}</h2>
+      <h2>{catName}</h2>
       <div className="Cat-attributes">
         <table className="Cat-table">
           <tr>
