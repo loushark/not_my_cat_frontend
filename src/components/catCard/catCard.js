@@ -12,6 +12,12 @@ function Cat() {
     <h2>Name</h2>
     <div>
     <table>
+    <tr>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+    </tr>
     </table>
     </div>
     </div>

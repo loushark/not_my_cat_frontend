@@ -32,4 +32,8 @@ describe('catCard', () => {
   it('has a table for cattributes', () => {
     expect(wrapper.exists('table')).toEqual(true)
   })
+
+  it('has 3 rows', () => {
+    expect(wrapper.find('tr').length).toEqual(3)
+  })
 })
