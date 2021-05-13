@@ -12,4 +12,8 @@ describe('catCard', () => {
   it('has a title', () => {
     expect(wrapper.exists('h1')).toEqual(true)
   })
+
+  it('has an image', () => {
+    expect(wrapper.exists('img')).toEqual(true)
+  })
 })
