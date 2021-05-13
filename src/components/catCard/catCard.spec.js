@@ -9,6 +9,10 @@ describe('catCard', () => {
     expect(wrapper.find('div').length).toEqual(2);
   })
 
+  it('has a Cat-id div', () => {
+    expect(wrapper.exists('.Cat-id')).toEqual(true)
+  })
+
   it('should have a header with class Cat-header', () => {
     expect(wrapper.exists('.Cat-header')).toEqual(true)
   })
@@ -29,8 +33,16 @@ describe('catCard', () => {
     expect(wrapper.exists('h2')).toEqual(true)
   })
 
+  it('has a Cat-attributes div', () => {
+    expect(wrapper.exists('.Cat-attributes')).toEqual(true)
+  })
+
   it('has a table for cattributes', () => {
     expect(wrapper.exists('table')).toEqual(true)
+  })
+
+  it('has a table className Cat-table', () => {
+    expect(wrapper.exists('.Cat-table')).toEqual(true)
   })
 
   it('has 3 rows', () => {

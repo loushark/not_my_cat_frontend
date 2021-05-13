@@ -4,14 +4,14 @@ import '../../App.css';
 
 function Cat() {
   return (
-    <div>
+    <div className="Cat-id">
       <header className="Cat-header">
         <h1>Spotted By:</h1>
       </header>
       <img src={logo} className="Cat-image"/>
       <h2>Name</h2>
-      <div>
-        <table>
+      <div className="Cat-attributes">
+        <table className="Cat-table">
           <tr>
             <th></th>
             <td></td>
