@@ -2,11 +2,14 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import App from '../../App';
 import SignUpButton from './SignUpButton.js'
+import { Link } from 'react-router-dom';
 
 describe('SignUpButton', () => {
   const signUp = SignUpButton()
   it('returns a sign up button displayed on the page', () => {
-  expect(signUp).toMatchObject(<button className="SignUp-button">Sign Up</button>)
+  expect(signUp).toMatchObject(<div>
+  <Link to="/signup" className="Signup-button">Sign Up</Link>
+  </div>)
 })
 
 })

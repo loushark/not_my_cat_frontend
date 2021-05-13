@@ -5,7 +5,7 @@ import LoginButton from './components/LoginButton/LoginButton.js'
 import LogoutButton from './components/LogoutButton/LogoutButton.js'
 import SignUpButton from './components/SignUpButton/SignUpButton.js'
 import SignUpForm from './components/SignUpForm/SignUpForm.js'
-import LoginForm from './components/Loginform/loginform.js'
+import LoginForm from './components/LoginForm/LoginForm.js'
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 export default function App() {
@@ -21,6 +21,7 @@ export default function App() {
       <SignUpButton />
 
       </header>
+
         <div>
           <Route path= '/signup' component={SignUpForm} />
           <Route path= '/login' component={LoginForm} />

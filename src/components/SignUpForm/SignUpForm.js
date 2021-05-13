@@ -20,7 +20,6 @@ const SignUpForm = () => {
       <input type="submit" />
     </form>
     </div>
-
   );
 };
 
