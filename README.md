@@ -19,3 +19,10 @@ https://blog.logrocket.com/guide-to-react-useeffect-hook/#:~:text=Dependencies%2
 https://dev.to/mohammedasker/dealing-with-json-is-not-a-function-error-1apn
 
 https://www.freecodecamp.org/news/state-management-with-react-hooks/
+
+https://blog.logrocket.com/guide-to-react-usereducer-hook/
+
+
+\/ good for showing how it is refactored from simple vars to reducer
+
+https://kentcdodds.com/blog/the-state-reducer-pattern-with-react-hooks
