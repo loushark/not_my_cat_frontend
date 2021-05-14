@@ -9,9 +9,9 @@ const LoginForm = (props) => {
     username: '',
     password: ''
   })
-  
+
   const [invalid, setInvalid] = useState(false)
-  
+
   const onChange = (element) => {
     setUserData((prevState) => ({...prevState, [element.target.name]: element.target.value }))
   }
@@ -31,6 +31,7 @@ const LoginForm = (props) => {
         data: res.data
       })
       props.history.push('/')
+      console.log(props)
     })
     .catch(error => {
       setInvalid(true)
@@ -47,14 +48,14 @@ const LoginForm = (props) => {
     </div>}
     <form className="Login-form" onSubmit={element => login(element)}>
       <input type="text"
-       name="username" 
+       name="username"
        placeholder="Username"
        onChange={element => onChange(element)}/>
       <br />
       <br />
-      <input type="password" 
+      <input type="password"
       name="password"
-      placeholder="Password" 
+      placeholder="Password"
       onChange={element => onChange(element)}/>
       <br />
       <br />
