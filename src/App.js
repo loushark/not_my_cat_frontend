@@ -8,6 +8,7 @@ import SignUpForm from './components/SignUpForm/SignUpForm.js'
 import LoginForm from './components/LoginForm/LoginForm.js'
 import CreateCatCardButton from './components/CreateCatCardButton/CreateCatCardButton.js'
 import CreateCatCard from './components/CreateCatCard/CreateCatCard.js'
+import CatList from './components/catList/catList.js'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 export const AuthContext = React.createContext();
@@ -25,7 +26,7 @@ const reducer = (state, action) => {
       localStorage.setItem("accessToken", JSON.stringify(action.data.accessToken));
       return {
         ...state,
-        isAuthenticated: true, 
+        isAuthenticated: true,
         user: action.data.user,
         accessToken: action.data.accessToken
       };
@@ -43,7 +44,7 @@ const reducer = (state, action) => {
 
 export default function App() {
   const [state, dispatch] = React.useReducer(reducer, initialState);
-  
+
   React.useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user") || null)
     const accessToken = JSON.parse(localStorage.getItem("accessToken") || null)
@@ -75,10 +76,12 @@ export default function App() {
           <div className="nav">
             {state.isAuthenticated && <h3>what up {state.user}</h3> }
           </div>
-          
-          {!state.isAuthenticated ? <p className="latest-cats">Login to see all the latest cats</p> 
+
+          {!state.isAuthenticated ? <p className="latest-cats">Login to see all the latest cats</p>
           : <p className="latest-cats">Here are all the finest picks!</p>}
+
           <div>
+          <CatList />
             <Route path= '/signup' component={SignUpForm} />
             <Route path= '/new-cat' component={CreateCatCard} />
             <Route path= '/login' component={LoginForm} />

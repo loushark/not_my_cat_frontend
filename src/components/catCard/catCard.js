@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../../bobcat.png';
+import SpottedButton from '../SpottedButton/SpottedButton.js'
 import '../../App.css';
 
 const Cat = ({ catName, user_id, cattitude, floofiness, chonk }) => {
@@ -27,6 +28,7 @@ const Cat = ({ catName, user_id, cattitude, floofiness, chonk }) => {
           </tr>
         </table>
       </div>
+      <SpottedButton />
     </div>
   )
 }
