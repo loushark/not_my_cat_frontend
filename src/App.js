@@ -9,6 +9,7 @@ import LoginForm from './components/LoginForm/LoginForm.js'
 import CreateCatCardButton from './components/CreateCatCardButton/CreateCatCardButton.js'
 import CreateCatCard from './components/CreateCatCard/CreateCatCard.js'
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import CatList from './components/catList/catList.js'
 
 export default function App() {
   return (
@@ -25,6 +26,10 @@ export default function App() {
       <CreateCatCardButton />
 
         <div>
+          <p className="latest-cats">
+            Hot new cats in town...
+          </p>
+          <CatList/>
           <Route path= '/signup' component={SignUpForm} />
           <Route path= '/new-cat' component={CreateCatCard} />
           <Route path= '/login' component={LoginForm} />
