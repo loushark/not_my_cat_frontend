@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 const CreateCatCardButton = () => {
   return (
-    <div>
-    <Link to="/new-cat" className="NewCat-button">Add a Cat</Link>
-    </div>
+    <>
+    <Link to="/new-cat" className="button">Add a Cat</Link>
+    </>
   );
 };
 

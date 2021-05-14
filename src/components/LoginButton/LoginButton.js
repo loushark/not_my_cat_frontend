@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 const LoginButton = () => {
   return (
-    <div>
-    <Link to="/login" className="Login-button">Login</Link>
-    </div>
+    <>
+    <Link to="/login" className="button">Login</Link>
+    </>
   );
 };
 

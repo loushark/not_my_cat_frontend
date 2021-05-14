@@ -1,11 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from "../../App";
 
-const LogoutButton = () => {
+
+const LogoutButton = (props) => {
+
+  const { dispatch } = React.useContext(AuthContext);
+ 
   return (
-    <div>
-    <Link to="/" className="Logout-button">Logout</Link>
-    </div>
+    <>
+    <Link to="/" className="button" onClick={() => dispatch({type: "LOGOUT"})}>Logout</Link>
+    </>
   );
 };
 

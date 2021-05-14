@@ -25,16 +25,15 @@ a {
 .App-logo {
   height: 8vmin;
   pointer-events: none;
+  display: flex;
+  float: left;
 }
 
 .App-header {
   background-color: white;
   min-height: 10vh;
-  /* position: fixed;
-  top: 0; */
   display: flex;
   width: 100%;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
@@ -61,6 +60,38 @@ a {
   margin: 15px;
 
   box-shadow: 5px 5px 8px #888888;
+}
+
+input {
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: white;
+  color: black;
+  border: 2px solid #fcb243;
+}
+
+.button {
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: white;
+  color: black;
+  border: 2px solid #fcb243;
+  text-decoration: none;
+  font-family: 'Fira Sans', sans-serif;
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: #fcb243;
+  color: white;
+}
+
+.nav {
+  display: inline-flex !important;
 }
 
 .Cat-table {
