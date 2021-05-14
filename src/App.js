@@ -80,7 +80,6 @@ export default function App() {
           {!state.isAuthenticated ? <p className="latest-cats">Login to see all the latest cats</p>
           : <p className="latest-cats">Here are all the finest picks!</p>}
           <CatList props={state}/>
-
           <div>
             <Route path= '/signup' component={SignUpForm} />
             <Route path= '/new-cat' component={CreateCatCard} />
