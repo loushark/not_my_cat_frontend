@@ -10,6 +10,7 @@ import CreateCatCardButton from './components/CreateCatCardButton/CreateCatCardB
 import CreateCatCard from './components/CreateCatCard/CreateCatCard.js'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import CatList from './components/catList/catList.js'
+
 export const AuthContext = React.createContext();
 
 const initialState = {
