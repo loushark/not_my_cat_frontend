@@ -58,11 +58,11 @@ a {
   border-radius: 20px;
   align-items: center;
   margin: 15px;
-
   box-shadow: 5px 5px 8px #888888;
 }
 
 input {
+  width: 200px;
   margin: 5px;
   padding: 5px;
   border-radius: 5px;
@@ -112,4 +112,28 @@ input {
 
 .Cat-name {
   color: #E6B655;
+}
+
+.grow {
+  transition: all .2s ease-in-out;
+}
+
+.grow:hover {
+  transform: scale(1.05) rotateZ(2deg);
+}
+
+.form {
+  display: inline-grid;
+  grid-template-columns: 20% 30% 30% 20%;
+  justify-content: center;
+}
+
+.newcat-form {
+  justify-self: end;
+  grid-column: 3 / 4;
+}
+
+.form-left {
+  grid-column: 2 / 3;
+  justify-items: center;
 }

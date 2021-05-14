@@ -76,15 +76,15 @@ export default function App() {
           <div className="nav">
             {state.isAuthenticated && <h3>what up {state.user}</h3> }
           </div>
-
           {!state.isAuthenticated ? <p className="latest-cats">Login to see all the latest cats</p>
           : <p className="latest-cats">Here are all the finest picks!</p>}
-          <CatList props={state}/>
+          
           <div>
             <Route path= '/signup' component={SignUpForm} />
             <Route path= '/new-cat' component={CreateCatCard} />
             <Route path= '/login' component={LoginForm} />
           </div>
+          <CatList props={state}/>
         </Router>
       </div>
     </AuthContext.Provider>

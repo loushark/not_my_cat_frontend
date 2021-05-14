@@ -22,7 +22,8 @@ const LoginForm = (props) => {
     axios.post('http://127.0.0.1:8082/api/login', userData)
     .then(response => {
       if (response.status === 200) {
-        return response      }
+        return response      
+      }
     })
     .then(res => {
       console.log(res.data)
@@ -41,7 +42,7 @@ const LoginForm = (props) => {
 
   return (
 
-  <div>
+  <div className="form">
     <h3>Login to add your cats!</h3>
     {invalid && <div>
       <strong>User details are incorrect!</strong>

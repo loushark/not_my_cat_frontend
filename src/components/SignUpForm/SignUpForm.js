@@ -7,6 +7,7 @@ const SignUpForm = () => {
     email: '',
     password: ''
   })
+
   const [invalid, setInvalid] = useState(false)
   const [signUp, setSignUp] = useState(false)
 
@@ -31,7 +32,7 @@ const SignUpForm = () => {
 }
   return (
 
-  <div>
+  <div className="form">
     <h3>Sign up to add your cats!</h3>
     {invalid && <div>
       <strong>Email has already been used!</strong>
