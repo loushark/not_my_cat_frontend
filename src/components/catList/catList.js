@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Cat from '../catCard/catCard.js'
 import useCats from '../../hooks/use-cats'
 import '../../App.css';
@@ -6,20 +6,26 @@ import { AuthContext } from "../../App";
 
 const CatList = (state) => {
   const [cats] = useCats();
-  const maxCats = 3;
-  const threeCats = cats.slice(Math.max(cats.length - maxCats, 0));
+  let maxCats;
+  let threeCats;
 
+  useEffect( () => {
+    if(!state.isAuthenticated) {
+      maxCats = 3
+    } else {
+      maxCats = 10
+    }
+    threeCats = cats.slice(Math.max(cats.length - maxCats, 0));
+  }, [state.isAuthenticated]);
+
+
+  console.log(state)
+ console.log(cats);
   return (
     <div className="cat-list">
-      { !state.isAuthenticated ?
-        threeCats.map((cat)=> (
-          <Cat key={`cat-${cat.id}`} {...cat} />
-        ))
-        :
-          cats.map((cat)=> (
-          <Cat key={`cat-${cat.id}`} {...cat} />
-          ))
-        }
+      { threeCats.map((cat)=> (
+          <Cat key={`cat-${cat._id}`} {...cat} />
+        ))}
       </div>
   );
 };

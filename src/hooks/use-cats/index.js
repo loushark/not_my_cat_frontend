@@ -15,7 +15,6 @@ const useCats = () => {
 
   };
   useEffect(() => fetchCats(), []);
-  console.log([cats])
   return [cats];
 }
 
