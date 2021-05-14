@@ -1,19 +1,25 @@
 .App {
   text-align: center;
-}
-
-link h1 {
-  text-decoration: none;
-}
-
-.title {
-  font-family: 'Fira Sans', sans-serif;
-  text-decoration: none;
-  color: rgb(255, 255, 255);
+  /* background-color: #ADDDCE; */
+  /* background-color: #cfe3e0; */
+  /* background-color: #b4ccb5; */
+  background: linear-gradient(130deg, #c7ede9 50%, #c7dded 50%);
+  min-height: 1000px;
+  font-family: 'Comic Sans MS';
+  /* min height needs updating */
 }
 
 a {
-  font-family: 'Fira Sans', sans-serif;
+  margin: 5px;
+  padding: 5px;
+  background-color: white;
+  border: 1px solid #E6B655;
+  border-radius: 10px;
+  font-size: 15px;
+  color: black;
+  text-decoration: none;
+  font-family: 'Comic Sans MS';
+  /* font family needs updating */
 }
 
 .App-logo {
@@ -24,20 +30,36 @@ a {
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: white;
   min-height: 10vh;
   display: flex;
   width: 100%;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
-  font-family: 'Fira Sans', sans-serif;
-  text-decoration: none;
+  color: #E6B655;
+  font-family: 'Comic Sans MS';
+  box-shadow: 5px 5px 8px #888888;
 }
 
-.App-link {
-  color: #61dafb;
+/*catCard styling*/
+
+.cat-list {
+  margin-top: 50px;
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+}
+
+
+.Cat-id {
+  width: 300px;
+  background-color: white;
+  border: 2px dashed #E6B655;
+  border-radius: 20px;
+  align-items: center;
+  margin: 15px;
+
+  box-shadow: 5px 5px 8px #888888;
 }
 
 input {
@@ -70,4 +92,24 @@ input {
 
 .nav {
   display: inline-flex !important;
+}
+
+.Cat-table {
+  margin: 20px;
+  display: grid;
+  justify-content: center;
+}
+
+.Cat-header {
+  font-size: 8px;
+}
+
+.Cat-image {
+  width: 200px;
+  /* border: 2px solid #E6B655;
+  border-radius: 20px; */
+}
+
+.Cat-name {
+  color: #E6B655;
 }
