@@ -2,7 +2,7 @@ import React from 'react';
 import logo from '../../bobcat.png';
 import '../../App.css';
 
-const Cat = ({ catName, user_id }) => {
+const Cat = ({ catName, user_id, cattitude, floofiness, chonk }) => {
   return (
     <div className="Cat-id">
       <header className="Cat-header">
@@ -15,15 +15,15 @@ const Cat = ({ catName, user_id }) => {
         <table className="Cat-table">
           <tr>
             <th>Cattitude</th>
-            <td>12</td>
+            <td>{cattitude}</td>
           </tr>
           <tr>
             <th>Floofiness</th>
-            <td>6</td>
+            <td>{floofiness}</td>
           </tr>
           <tr>
             <th>Chonk</th>
-            <td>10</td>
+            <td>{chonk}</td>
           </tr>
         </table>
       </div>
