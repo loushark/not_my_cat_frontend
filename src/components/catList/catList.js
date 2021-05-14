@@ -6,7 +6,7 @@ import { AuthContext } from "../../App";
 
 const CatList = () => {
   const [cats] = useCats();
-  const maxCats = 23;
+  const maxCats = 3;
   const threeCats = cats.slice(Math.max(cats.length - maxCats, 0));
 
   return (
