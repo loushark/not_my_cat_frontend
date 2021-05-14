@@ -4,33 +4,23 @@ import useCats from '../../hooks/use-cats'
 import '../../App.css';
 import { AuthContext } from "../../App";
 
-const CatList = () => {
+const CatList = (state) => {
   const [cats] = useCats();
-  const maxCats = 23;
+  const maxCats = 3;
   const threeCats = cats.slice(Math.max(cats.length - maxCats, 0));
 
   return (
-    <AuthContext.Provider
-      value={{
-      state,
-      dispatch
-      }}>
-
+    <div className="cat-list">
       { !state.isAuthenticated ?
-        <div className="cat-list">
-        {threeCats.map((cat)=> (
-        <Cat key={`cat-${cat.id}`} {...cat} />
-        ))}
-        </div>
+        threeCats.map((cat)=> (
+          <Cat key={`cat-${cat.id}`} {...cat} />
+        ))
         :
-        <div className="cat-list">
-        {cats.map((cat)=> (
-        <Cat key={`cat-${cat.id}`} {...cat} />
-        ))}
-        </div>
-      }
-
-    </AuthContext.Provider>
+          cats.map((cat)=> (
+          <Cat key={`cat-${cat.id}`} {...cat} />
+          ))
+        }
+      </div>
   );
 };
 
