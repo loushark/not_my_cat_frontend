@@ -14,7 +14,8 @@ https://enzymejs.github.io/enzyme/docs/api/ShallowWrapper/exists.html
 
 ## hooks and state in functional react components
 
-https://blog.logrocket.com/guide-to-react-useeffect-hook/#:~:text=Dependencies%20are%20array%20items%20provided,based%20on%20every%20effect's%20dependencies.
+
+https://blog.logrocket.com/guide-to-react-useeffect-hook/
 
 https://dev.to/mohammedasker/dealing-with-json-is-not-a-function-error-1apn
 
@@ -26,3 +27,7 @@ https://blog.logrocket.com/guide-to-react-usereducer-hook/
 \/ good for showing how it is refactored from simple vars to reducer
 
 https://kentcdodds.com/blog/the-state-reducer-pattern-with-react-hooks
+
+\/ this for verifying on backend
+
+https://medium.com/@maison.moa/using-jwt-json-web-tokens-to-authorize-users-and-protect-api-routes-3e04a1453c3e
