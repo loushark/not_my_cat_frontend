@@ -26,13 +26,11 @@ const LoginForm = (props) => {
       }
     })
     .then(res => {
-      console.log(res.data)
       dispatch({
         type: "LOGIN",
         data: res.data
       })
       props.history.push('/')
-      console.log(props)
     })
     .catch(error => {
       setInvalid(true)
@@ -41,28 +39,21 @@ const LoginForm = (props) => {
   }
 
   return (
-
-  <div className="form">
-    <h3>Login to add your cats!</h3>
-    {invalid && <div>
-      <strong>User details are incorrect!</strong>
-    </div>}
-    <form className="Login-form" onSubmit={element => login(element)}>
+    <form className="login-form" onSubmit={element => login(element)}>
+      <h3>Login to add your cats!</h3>
+      {invalid && <strong>User details are incorrect!</strong>}
       <input type="text"
        name="username"
        placeholder="Username"
        onChange={element => onChange(element)}/>
-      <br />
       <br />
       <input type="password"
       name="password"
       placeholder="Password"
       onChange={element => onChange(element)}/>
       <br />
-      <br />
       <input type="submit" className="button"/>
     </form>
-  </div>
   );
 };
 

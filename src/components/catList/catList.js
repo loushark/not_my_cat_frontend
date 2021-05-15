@@ -22,9 +22,11 @@ const CatList = (state) => {
 
   return (
     <div className="cat-list">
-      { cats.map((cat)=> (
-          <Cat key={`cat-${cat._id}`} {...cat} />
+      <div className="cat-list-row">
+        {cats.map((cat)=> (
+          <Cat key={`cat-${cat._id}`} {...cat}/>
         ))}
+      </div>
     </div>
   );
 };

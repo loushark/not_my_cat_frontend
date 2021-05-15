@@ -64,7 +64,7 @@ export default function App() {
         <Router>
           <header className="App-header">
               <img src={logo} className="App-logo" alt="logo" />
-              <Link to="/"><h1 className="title">Not My Cat</h1></Link>
+              <Link to="/" className="title"><h1 className="title">NOT MY CAT</h1></Link>
           </header>
           <div className="nav">
             {!state.isAuthenticated ? <>
@@ -78,8 +78,7 @@ export default function App() {
           </div>
           {!state.isAuthenticated ? <p className="latest-cats">Login to see all the latest cats</p>
           : <p className="latest-cats">Here are all the finest picks!</p>}
-          
-          <div>
+          <div className="cat-list">
             <Route path= '/signup' component={SignUpForm} />
             <Route path= '/new-cat' component={CreateCatCard} />
             <Route path= '/login' component={LoginForm} />

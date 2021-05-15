@@ -21,8 +21,6 @@ const CreateCatCard = (props) => {
     setPostData((prevState) => ({...prevState, [element.target.name]: element.target.value }))
   }
 
-
-
   const createCat = (element) => {
     element.preventDefault()
 
@@ -36,7 +34,6 @@ const CreateCatCard = (props) => {
     axios.post('http://127.0.0.1:8082/api/cats', { postData, accessToken: state.accessToken })
     .then(response => {
       if (response.status === 201) {
-        console.log(response)   
         props.history.push('/')
       }
     })
@@ -47,8 +44,7 @@ const CreateCatCard = (props) => {
   }
 
   return (
-
-  <div className="form">
+  <div className="form cat-list-row">
     <div className="form-left">
       <Cat {...postData}/>
     </div>
@@ -68,6 +64,7 @@ const CreateCatCard = (props) => {
       <input type="number" name="chonk" placeholder="Chonk" min="1" max="10"
         onChange={element => onChange(element)}
       />
+      <input type="file" name="image" onChange={element => onChange(element)} />
       <input type="submit" className="button"/>
     </form>
   </div>
