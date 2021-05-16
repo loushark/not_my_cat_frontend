@@ -114,6 +114,7 @@ a {
 .title {
   font-family: 'Fredoka One', cursive;
   font-size: 7vw;
+  /* background-image: url("/src/paisley-cats.jpg"); */
   background: linear-gradient(90deg, #e0d82f, #e1c62f, #e2b430, #e3a230, #e49031, #e57d31, #e66b32);  
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -155,5 +156,53 @@ input {
 }
 
 .nav {
-  display: inline-flex !important;
+  width: 100%;
+}
+
+/* welcome message */
+
+.speech-bubble h3 {
+  margin: 5px;
+  color: #fcb243;
+}
+
+.speech-bubble {
+  width: 300px;
+  margin: 10px;
+  border: 4px solid #fcb243;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 900;
+  font-family: arial;
+  background-color: white;
+  position: relative;
+  transform: rotateZ(9deg);
+  box-shadow: 5px 5px 8px #888888;
+}
+
+.speech-bubble:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid #fcb243;
+  border-top: 10px solid #fcb243;
+  border-bottom: 10px solid transparent;
+  left: -21px;
+  top: 6px;
+}
+
+.speech-bubble:after {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 7px solid transparent;
+  border-right: 7px solid #fff;
+  border-top: 7px solid #fff;
+  border-bottom: 7px solid transparent;
+  left: -11px;
+  top: 10px;
 }

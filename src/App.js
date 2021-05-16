@@ -10,6 +10,8 @@ import CreateCatCardButton from './components/CreateCatCardButton/CreateCatCardB
 import CreateCatCard from './components/CreateCatCard/CreateCatCard.js'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import CatList from './components/catList/catList.js'
+import { ReactComponent as Copse } from './svg/copse.svg'
+import { ReactComponent as CatImg } from './svg/cat1.svg'
 
 export const AuthContext = React.createContext();
 
@@ -63,19 +65,20 @@ export default function App() {
       <div className="App">
         <Router>
           <header className="App-header">
-              <img src={logo} className="App-logo" alt="logo" />
-              <Link to="/" className="title"><h1 className="title">NOT MY CAT</h1></Link>
+            <CatImg />
+            <Link to="/" className="title"><h1 className="title">NOT MY CAT</h1></Link>
+            <Copse />
+            {state.isAuthenticated && <div className="speech-bubble">
+              <h3>What up {state.user}!</h3> 
+            </div>}
           </header>
           <div className="nav">
-            {!state.isAuthenticated ? <>
-            <LoginButton />
-            <SignUpButton />
-            </> : <><LogoutButton />
-            <CreateCatCardButton /></>}
-          </div>
-          <div className="nav">
-            {state.isAuthenticated && <h3>what up {state.user}</h3> }
-          </div>
+              {!state.isAuthenticated ? <>
+              <LoginButton />
+              <SignUpButton />
+              </> : <><LogoutButton />
+              <CreateCatCardButton /></>}
+            </div>
           {!state.isAuthenticated ? <p className="latest-cats">Login to see all the latest cats</p>
           : <p className="latest-cats">Here are all the finest picks!</p>}
           <div className="cat-list">
