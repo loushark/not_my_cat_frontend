@@ -4,7 +4,7 @@ import '../../App.css';
 
 const Cat = ({ catName, user_id, cattitude, floof, chonk }) => {
   return (
-    <div className="Cat-id">
+    <div className="Cat-id grow">
       <header className="Cat-header">
         <h1>Spotted By:</h1>
         <h1>{user_id}</h1>
