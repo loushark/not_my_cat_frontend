@@ -1,8 +1,14 @@
 import React from 'react';
 import SpottedButton from '../SpottedButton/SpottedButton.js'
 import '../../App.css';
+import spareImg from '../../svg/cat2_1.svg'
 
 const Cat = ({ catName, user_id, cattitude, floof, chonk, image }) => {
+
+  if(!image) {
+    image = spareImg
+  }
+
   return (
     <div className="Cat-id grow">
       <header className="Cat-header">
