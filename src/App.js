@@ -88,12 +88,12 @@ export default function App() {
             <Route path= '/new-cat' component={CreateCatCard} />
             <Route path= '/login' component={LoginForm} />
           </div>
-          <Tabs>
-            <div label="Cats!">
+          <Tabs className="tabs-div">
+            <div label="view all cats">
               <CatList props={state}/>
             </div>
-            <div label="Maps!">
-              <MapContainer />
+            <div label="view cat map">
+              <MapContainer className="cat-map" />
             </div>
           </Tabs>
         </Router>

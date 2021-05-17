@@ -1,12 +1,8 @@
 .App {
   text-align: center;
-  /* background-color: #ADDDCE; */
-  /* background-color: #cfe3e0; */
-  /* background-color: #b4ccb5; */
   background: linear-gradient(130deg, #c7ede9 50%, #c7dded 50%);
   min-height: 1000px;
   font-family: 'Fira Sans', sans-serif;
-  /* min height needs updating */
 }
 
 a {
@@ -19,7 +15,6 @@ a {
   color: black;
   text-decoration: none;
   font-family: 'Fira Sans', sans-serif;
-  /* font family needs updating */
 }
 
 .App-logo {
@@ -40,6 +35,28 @@ a {
   color: #E6B655;
   font-family: 'Fira Sans', sans-serif;
   box-shadow: 5px 5px 8px #888888;
+}
+
+/*Tabs*/
+
+.tab-list-item, .tab-list-itemtab-list-active {
+  margin: 5px;
+  max-width: 100px;
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  color: black;
+  border: 2px solid #fcb243;
+  text-decoration: none;
+  font-family: 'Fira Sans', sans-serif;
+  transition-duration: 0.4s;
+  display: inline;
+}
+
+.tab-list-item:hover {
+  background-color: #fcb243;
+  color: white;
 }
 
 /*catCard styling*/
@@ -78,8 +95,6 @@ a {
 
 .Cat-image {
   width: 200px;
-  /* border: 2px solid #E6B655;
-  border-radius: 20px; */
 }
 
 .Cat-name {
@@ -115,7 +130,7 @@ a {
   font-family: 'Fredoka One', cursive;
   font-size: 7vw;
   /* background-image: url("/src/paisley-cats.jpg"); */
-  background: linear-gradient(90deg, #e0d82f, #e1c62f, #e2b430, #e3a230, #e49031, #e57d31, #e66b32);  
+  background: linear-gradient(90deg, #e0d82f, #e1c62f, #e2b430, #e3a230, #e49031, #e57d31, #e66b32);
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
