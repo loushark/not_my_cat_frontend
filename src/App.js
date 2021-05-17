@@ -8,6 +8,7 @@ import SignUpForm from './components/SignUpForm/SignUpForm.js'
 import LoginForm from './components/LoginForm/LoginForm.js'
 import CreateCatCardButton from './components/CreateCatCardButton/CreateCatCardButton.js'
 import CreateCatCard from './components/CreateCatCard/CreateCatCard.js'
+import CatList from './components/catList/catList.js'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import CatList from './components/catList/catList.js'
 import { ReactComponent as Copse } from './svg/copse.svg'
