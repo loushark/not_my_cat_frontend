@@ -10,7 +10,6 @@ import CreateCatCardButton from './components/CreateCatCardButton/CreateCatCardB
 import CreateCatCard from './components/CreateCatCard/CreateCatCard.js'
 import CatList from './components/catList/catList.js'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import CatList from './components/catList/catList.js'
 import { ReactComponent as Copse } from './svg/copse.svg'
 import { ReactComponent as CatImg } from './svg/cat1.svg'
 
