@@ -69,7 +69,7 @@ export default function App() {
             <Link to="/" className="title"><h1 className="title">NOT MY CAT</h1></Link>
             <Copse />
             {state.isAuthenticated && <div className="speech-bubble">
-              <h3>What up {state.user}!</h3> 
+              <h3>What up {state.user}!</h3>
             </div>}
           </header>
           <div className="nav">
