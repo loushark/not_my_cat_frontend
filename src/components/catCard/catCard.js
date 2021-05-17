@@ -3,9 +3,9 @@ import logo from '../../bobcat.png';
 import SpottedButton from '../SpottedButton/SpottedButton.js'
 import '../../App.css';
 
-const Cat = ({ catName, user_id, cattitude, floofiness, chonk }) => {
+const Cat = ({ catName, user_id, cattitude, floof, chonk }) => {
   return (
-    <div className="Cat-id">
+    <div className="Cat-id grow">
       <header className="Cat-header">
         <h1>Spotted By:</h1>
         <h1>{user_id}</h1>
@@ -20,7 +20,7 @@ const Cat = ({ catName, user_id, cattitude, floofiness, chonk }) => {
           </tr>
           <tr>
             <th>Floofiness</th>
-            <td>{floofiness}</td>
+            <td>{floof}</td>
           </tr>
           <tr>
             <th>Chonk</th>

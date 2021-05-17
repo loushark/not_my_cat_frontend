@@ -1,18 +1,32 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Cat from '../catCard/catCard.js'
 import useCats from '../../hooks/use-cats'
 import '../../App.css';
+import { AuthContext } from "../../App";
 
-const CatList = () => {
-  console.log(useCats())
-  const [cats] = useCats();
+const CatList = (state) => {
+  const [cats] =  useCats();
+ 
+  // const catArray = useCats().slice(Math.max(cats.length - maxCats, 0));
+  // console.log(catArray)
+
+  // const catArray = cats.slice(Math.max(cats.length - maxCats, 0));
+  
+  // useEffect( (catArray) => {
+  //   if(!state.isAuthenticated) {
+  //     maxCats.current = 3
+  //   } else {
+  //     maxCats.current = 10
+  //   }
+  // }, [state.isAuthenticated, cats]);
 
   return (
     <div className="cat-list">
-    {cats.map((cat)=> (
-      <Cat key={`cat-${cat.id}`} {...cat} />
-      // need to refactor this iteration so it prints in the Cat function
-    ))}
+      <div className="cat-list-row">
+        {cats.map((cat)=> (
+          <Cat key={`cat-${cat._id}`} {...cat}/>
+        ))}
+      </div>
     </div>
   );
 };
