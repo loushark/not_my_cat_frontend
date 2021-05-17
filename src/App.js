@@ -9,6 +9,8 @@ import LoginForm from './components/LoginForm/LoginForm.js'
 import CreateCatCardButton from './components/CreateCatCardButton/CreateCatCardButton.js'
 import CreateCatCard from './components/CreateCatCard/CreateCatCard.js'
 import CatList from './components/catList/catList.js'
+import Tabs from './components/Tab/Tabs.js'
+import MapContainer from './components/MapContainer/MapContainer.js'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { ReactComponent as Copse } from './svg/copse.svg'
 import { ReactComponent as CatImg } from './svg/cat1.svg'
@@ -86,7 +88,14 @@ export default function App() {
             <Route path= '/new-cat' component={CreateCatCard} />
             <Route path= '/login' component={LoginForm} />
           </div>
-          <CatList props={state}/>
+          <Tabs>
+            <div label="Cats!">
+              <CatList props={state}/>
+            </div>
+            <div label="Maps!">
+              <MapContainer />
+            </div>
+          </Tabs>
         </Router>
       </div>
     </AuthContext.Provider>

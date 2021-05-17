@@ -1,14 +1,14 @@
-import './App.css';
-import React { Component } from 'react';
+// import './App.css';
+import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 require ('dotenv/config');
 
 const mapStyles = {
-  height: '40%'',
+  height: '40%',
   width: '40%'
 };
 
-export class MaContainer extends Component{
+export class MapContainer extends Component{
   state = {
     showingInfoWindow: false,
     activeMarker: {},
@@ -44,10 +44,6 @@ export class MaContainer extends Component{
           }
         }
       >
-        <CurrentLocation
-          centerAroundCurentLocation
-          google={this.props.google}
-        >
           <Marker
             onClick={this.onMarkerClick}
             name={'cat'}
@@ -58,10 +54,9 @@ export class MaContainer extends Component{
             onClose={this.onClose}
           >
             <div>
-              <h4>{this.sstate.selectedPlace.name}</h4>
+              <h4>{this.state.selectedPlace.name}</h4>
             </div>
           </InfoWindow>
-        </CurrentLocation>
       </Map>
     );
   }
