@@ -4,8 +4,8 @@ import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 require ('dotenv/config');
 
 const mapStyles = {
-  height: '40%',
-  width: '40%'
+  height: '50%',
+  width: '80%'
 };
 
 export class MapContainer extends Component{
