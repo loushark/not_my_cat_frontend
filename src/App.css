@@ -1,3 +1,7 @@
+html {
+  background: linear-gradient(130deg, #c7ede9 50%, #c7dded 50%);
+}
+
 .App {
   text-align: center;
   /* background-color: #ADDDCE; */
@@ -48,6 +52,7 @@ a {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: 20px;
 }
 
 .cat-list-row {
@@ -57,7 +62,8 @@ a {
 }
 
 .Cat-id {
-  width: 300px;
+  width: 320px;
+  height: 550px;
   background-color: white;
   border: 2px dashed #E6B655;
   border-radius: 15px;
@@ -76,10 +82,26 @@ a {
   font-size: 8px;
 }
 
+.Cat-image-box {
+  display: flex;
+  margin: 0 auto;
+  width: 220px;
+  height: 220px;
+  overflow: hidden;
+  border: 2px solid #E6B655;
+  border-radius: 15px;
+  position: relative;
+}
+
 .Cat-image {
-  width: 200px;
-  /* border: 2px solid #E6B655;
-  border-radius: 20px; */
+  max-width:220;
+  max-height:220px;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .Cat-name {

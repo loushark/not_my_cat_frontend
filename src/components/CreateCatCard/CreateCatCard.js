@@ -19,11 +19,13 @@ const CreateCatCard = (props) => {
   const [cattributes, setCattributes] = useState(true)
 
   const onChange = (element) => {
-    if (element.id === "file") {
+    if (element.target.id === "file") {
       let file = element.target.files[0];
-      let base64String = getBase64(file)
-      console.log(base64String)
-      setPostData((prevState) => ({...prevState, image: base64String}))
+
+      getBase64(file)
+      .then((result) => {
+        setPostData((prevState) => ({...prevState, image: result}))
+      })      
     }
     else {
     setPostData((prevState) => ({...prevState, [element.target.name]: element.target.value }))
@@ -31,14 +33,16 @@ const CreateCatCard = (props) => {
   }
 
   const getBase64 = (file) => {
-    let baseUrl
-    let reader = new FileReader();
-    reader.readAsDataURL(file)
-    reader.onload = () => {
-      console.log("reader", reader)
-      baseUrl = reader.result
-      return baseUrl
-    }
+    return new Promise((resolve) => {
+      let base64image
+      let reader = new FileReader();
+      reader.readAsDataURL(file)
+
+      reader.onload = () => {
+        base64image = reader.result
+        resolve(base64image)
+      }
+    })
   }
 
 
