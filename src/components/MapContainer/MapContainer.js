@@ -8,7 +8,7 @@ const mapStyles = {
   width: '40%'
 };
 
-export class MaContainer extends Component{
+export class MapContainer extends Component{
   state = {
     showingInfoWindow: false,
     activeMarker: {},
@@ -52,6 +52,12 @@ export class MaContainer extends Component{
             onClick={this.onMarkerClick}
             name={'cat'}
           />
+          <Marker
+            lat:{52.52542}
+            lng:{-0.17055}
+            onClick={this.onMarkerClick}
+            name={'cat'}
+          />
           <InfoWindow
             marker={this.state.activeMarker}
             visible={this.state.showingInfoWindow}
@@ -62,6 +68,12 @@ export class MaContainer extends Component{
             </div>
           </InfoWindow>
         </CurrentLocation>
+        <Marker
+          lat:{56.52542}
+          lng:{-0.17055}
+          onClick={this.onMarkerClick}
+          name={'cat'}
+        />
       </Map>
     );
   }
