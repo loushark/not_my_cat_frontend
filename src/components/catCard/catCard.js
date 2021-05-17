@@ -3,14 +3,15 @@ import logo from '../../bobcat.png';
 import SpottedButton from '../SpottedButton/SpottedButton.js'
 import '../../App.css';
 
-const Cat = ({ catName, user_id, cattitude, floof, chonk }) => {
+const Cat = ({ catName, user_id, cattitude, floof, chonk, image }) => {
+  console.log(image)
   return (
     <div className="Cat-id grow">
       <header className="Cat-header">
         <h1>Spotted By:</h1>
         <h1>{user_id}</h1>
       </header>
-      <img src={logo} className="Cat-image" alt="cat"/>
+      <img src={"data:image/png;base64," + image} className="Cat-image" alt="cat"/>
       <h2 className="Cat-name">🐾 {catName}</h2>
       <div className="Cat-attributes">
         <table className="Cat-table">
