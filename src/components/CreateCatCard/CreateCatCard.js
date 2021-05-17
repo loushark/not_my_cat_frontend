@@ -35,6 +35,7 @@ const CreateCatCard = (props) => {
     .then(response => {
       if (response.status === 201) {
         props.history.push('/')
+        window.location.reload();
       }
     })
     .catch(error => {
