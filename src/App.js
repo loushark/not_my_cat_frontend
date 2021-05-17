@@ -14,7 +14,6 @@ import MapContainer from './components/MapContainer/MapContainer.js'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { ReactComponent as Copse } from './svg/copse.svg'
 import { ReactComponent as CatImg } from './svg/cat1.svg'
-import MapContainer from './components/MapContainer/MapContainer.js'
 
 export const AuthContext = React.createContext();
 

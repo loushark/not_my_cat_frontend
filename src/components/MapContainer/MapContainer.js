@@ -48,12 +48,6 @@ export class MapContainer extends Component{
             onClick={this.onMarkerClick}
             name={'cat'}
           />
-          <Marker
-            lat:{52.52542}
-            lng:{-0.17055}
-            onClick={this.onMarkerClick}
-            name={'cat'}
-          />
           <InfoWindow
             marker={this.state.activeMarker}
             visible={this.state.showingInfoWindow}

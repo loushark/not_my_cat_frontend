@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AuthContext } from "../../App";
 import axios from 'axios';
 import Cat from '../catCard/catCard.js'
@@ -11,7 +11,11 @@ const CreateCatCard = (props) => {
     user_id: state.user,
     cattitude: 0,
     floof: 0,
-    chonk: 0
+    chonk: 0,
+    image: "",
+    longitude: 0,
+    latitude: 0
+
   })
 
   const [invalid, setInvalid] = useState(false)
@@ -20,6 +24,23 @@ const CreateCatCard = (props) => {
   const onChange = (element) => {
     setPostData((prevState) => ({...prevState, [element.target.name]: element.target.value }))
   }
+
+  const getLocation = (options) => {
+    return new Promise((position, error) => {
+      navigator.geolocation.getCurrentPosition(position, error, options)
+    })
+  }
+
+  useEffect(() => {
+    getLocation({timeout:10000})
+    .then((position) => {
+      setPostData((prevState) => ({...prevState, latitude: position.coords.latitude }))
+      setPostData((prevState) => ({...prevState, longitude: position.coords.longitude }))
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+  }, [])
 
   const createCat = (element) => {
     element.preventDefault()
@@ -52,7 +73,7 @@ const CreateCatCard = (props) => {
       <h3>Add a cat!</h3>
       {!cattributes && <strong>You have overspent on cattributes! 20 Max!</strong>}
       {invalid && <strong>You have missed a cattribute!</strong>}
-      <input type="text" name="catName" placeholder="Name of Cat" 
+      <input type="text" name="catName" placeholder="Name of Cat"
         onChange={element => onChange(element)}
       />
       <input type="number" name="cattitude" placeholder="Cattitude" min="1" max="10"
