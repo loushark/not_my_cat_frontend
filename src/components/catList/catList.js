@@ -1,11 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import Cat from '../catCard/catCard.js'
-import useCats from '../../hooks/use-cats'
 import '../../App.css';
 
-const CatList = (state) => {
-  const [cats] =  useCats();
- 
+const CatList = ( list ) => {
+  // const [cats] = useCats();
+
   // const catArray = useCats().slice(Math.max(cats.length - maxCats, 0));
   // console.log(catArray)
 
@@ -18,11 +17,12 @@ const CatList = (state) => {
   //     maxCats.current = 10
   //   }
   // }, [state.isAuthenticated, cats]);
+  console.log( list )
 
   return (
     <div className="cat-list">
       <div className="cat-list-row">
-        {cats.map((cat)=> (
+        {list.list.map((cat)=> (
           <Cat key={`cat-${cat._id}`} {...cat}/>
         ))}
       </div>
