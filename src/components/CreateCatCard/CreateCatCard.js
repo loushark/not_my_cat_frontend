@@ -13,9 +13,10 @@ const CreateCatCard = (props) => {
     floof: 0,
     chonk: 0,
     image: "",
-    longitude: 0,
-    latitude: 0
-
+    location: {
+      lng: 0,
+      lat: 0
+      }
   })
 
   const [invalid, setInvalid] = useState(false)
@@ -34,8 +35,8 @@ const CreateCatCard = (props) => {
   useEffect(() => {
     getLocation({timeout:10000})
     .then((position) => {
-      setPostData((prevState) => ({...prevState, latitude: position.coords.latitude }))
-      setPostData((prevState) => ({...prevState, longitude: position.coords.longitude }))
+      setPostData((prevState) => ({...prevState, position: {lat: position.coords.latitude, lng: position.coords.longitude} }))
+      // setPostData((prevState) => ({...prevState, position: {lng: position.coords.longitude} }))
     })
     .catch((error) => {
       console.log(error)
