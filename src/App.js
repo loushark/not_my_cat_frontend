@@ -8,9 +8,11 @@ import LoginForm from './components/LoginForm/LoginForm.js'
 import CreateCatCardButton from './components/CreateCatCardButton/CreateCatCardButton.js'
 import CreateCatCard from './components/CreateCatCard/CreateCatCard.js'
 import CatList from './components/catList/catList.js'
+import UserProfile from './components/UserProfile/UserProfile.js'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { ReactComponent as Copse } from './svg/copse.svg'
 import { ReactComponent as CatImg } from './svg/cat1.svg'
+import useCats from './hooks/useCats'
 
 export const AuthContext = React.createContext();
 
@@ -45,6 +47,7 @@ const reducer = (state, action) => {
 
 export default function App() {
   const [state, dispatch] = React.useReducer(reducer, initialState);
+  const [listCats] = useCats();
 
   React.useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user") || null)
@@ -76,16 +79,21 @@ export default function App() {
               <LoginButton />
               <SignUpButton />
               </> : <><LogoutButton />
-              <CreateCatCardButton /></>}
+              <CreateCatCardButton />
+              <Link to='/profile' className='button'>Profile</Link></>}
             </div>
-          {!state.isAuthenticated ? <p className="latest-cats">Login to see all the latest cats</p>
-          : <p className="latest-cats">Here are all the finest picks!</p>}
           <div className="cat-list">
             <Route path= '/signup' component={SignUpForm} />
             <Route path= '/new-cat' component={CreateCatCard} />
             <Route path= '/login' component={LoginForm} />
+            <Route path= '/profile'>
+              <p className="latest-cats">Here are all your cats!</p>
+              <UserProfile />
+            </Route>
           </div>
-          <CatList props={state}/>
+          {!state.isAuthenticated ? <p className="latest-cats">Login to see all the latest cats</p>
+          : <p className="latest-cats">Here are all the finest picks!</p>}
+          <CatList list={listCats}/>
         </Router>
       </div>
     </AuthContext.Provider>
