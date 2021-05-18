@@ -4,7 +4,7 @@ const SpottedButton = () => {
   return (
     <>
     <p> Spotted 15 times</p>
-    <button>Spotted!</button>
+    <button className='button'>Spotted!</button>
     </>
   );
 };

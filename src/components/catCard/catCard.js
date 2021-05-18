@@ -40,9 +40,11 @@ const Cat =  ( { catName, user_id, cattitude, floof, chonk, image } ) => {
           </tbody>
         </table>
       </div>
+      <div className='Cat-footer'>
       {/* <PlayGameButton /> */}
-      {state.user === user_id ? <><DeleteButton name={catName} /></> : null }
+      {state.user === user_id ? <><DeleteButton catName={catName} /></> : null }
       <SpottedButton />
+      </div>
     </div>
   )
 }

@@ -6,9 +6,11 @@ const CatList = ( { list } ) => {
   return (
     <div className="cat-list">
       <div className="cat-list-row">
-        {list.map((cat)=> (
-          <Cat key={`cat-${cat._id}`} {...cat} />
-        ))}
+        { list.map ? 
+          list.map((cat)=> (
+            <Cat key={`cat-${cat._id}`} {...cat} />
+          )) : <p>Whaa... what? No cats found! Better go find some!</p>
+        }
       </div>
     </div>
   );
