@@ -3,6 +3,7 @@ import SpottedButton from '../SpottedButton/SpottedButton.js'
 import '../../App.css';
 import spareImg from '../../svg/cat2_1.svg'
 import { AuthContext } from '../../App'
+import DeleteButton from '../catCardButtons/catCardButtons.js'
 
 const Cat = ({ catName, user_id, cattitude, floof, chonk, image }) => {
   const { state } = React.useContext(AuthContext)
@@ -37,7 +38,7 @@ const Cat = ({ catName, user_id, cattitude, floof, chonk, image }) => {
           </tr>
         </table>
       </div>
-      {state.user === user_id ? <><DeleteButton /><PlayGameButton /></> : null }
+      {state.user === user_id ? <><DeleteButton name={catName} /><PlayGameButton /></> : null }
       <SpottedButton />
     </div>
   )
