@@ -1,12 +1,12 @@
 // import './App.css';
 import React from 'react';
-import { GoogleMap, LoadScript } from '@react-google-maps/api';
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import useCats from '../../hooks/use-cats';
 import CatMapList from '../catMapList/catMapList.js'
 require ('dotenv/config');
 
 const MapContainer = () => {
-
+const [cats] = useCats();
   const mapStyles = {
     height: "80vh",
     width: "80%",
@@ -20,10 +20,19 @@ const MapContainer = () => {
     <LoadScript
       googleMapsApiKey='AIzaSyCwHGfQTy_Eg2pSkOq-svnJCmB1f4fK54M'>
       <GoogleMap
-      mapContainerStyle={mapStyles}
-      zoom={13}
-      center={defaultCenter}
-      />
+        mapContainerStyle={mapStyles}
+        zoom={13}
+        center={defaultCenter}
+      >
+      {cats.map(cat => {
+        return (
+          <Marker
+            key={cat._id}
+            position={cat.position}
+          />
+        )
+      })}
+      </GoogleMap>
     </LoadScript>
   )
 }
