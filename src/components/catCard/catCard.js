@@ -2,8 +2,10 @@ import React from 'react';
 import SpottedButton from '../SpottedButton/SpottedButton.js'
 import '../../App.css';
 import spareImg from '../../svg/cat2_1.svg'
+import { AuthContext } from '../../App'
 
 const Cat = ({ catName, user_id, cattitude, floof, chonk, image }) => {
+  const { state } = React.useContext(AuthContext)
 
   if(!image) {
     image = spareImg
@@ -35,6 +37,7 @@ const Cat = ({ catName, user_id, cattitude, floof, chonk, image }) => {
           </tr>
         </table>
       </div>
+      {state.user === user_id ? <><DeleteButton /><PlayGameButton /></> : null }
       <SpottedButton />
     </div>
   )
