@@ -176,6 +176,11 @@ input {
 
 /*Maps*/
 
+.marker {
+  width: 30px;
+  height: 30px;
+}
+
 .gm-style-iw-d {
   /* make this smaller, and cat card responsive to size change */
 }
