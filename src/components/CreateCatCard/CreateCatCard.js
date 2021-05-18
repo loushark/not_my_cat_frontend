@@ -11,15 +11,40 @@ const CreateCatCard = (props) => {
     user_id: state.user,
     cattitude: 0,
     floof: 0,
-    chonk: 0
+    chonk: 0,
+    image: ""
   })
 
   const [invalid, setInvalid] = useState(false)
   const [cattributes, setCattributes] = useState(true)
 
   const onChange = (element) => {
+    if (element.target.id === "file") {
+      let file = element.target.files[0];
+
+      getBase64(file)
+      .then((result) => {
+        setPostData((prevState) => ({...prevState, image: result}))
+      })      
+    }
+    else {
     setPostData((prevState) => ({...prevState, [element.target.name]: element.target.value }))
+    }
   }
+
+  const getBase64 = (file) => {
+    return new Promise((resolve) => {
+      let base64image
+      let reader = new FileReader();
+      reader.readAsDataURL(file)
+
+      reader.onload = () => {
+        base64image = reader.result
+        resolve(base64image)
+      }
+    })
+  }
+
 
   const createCat = (element) => {
     element.preventDefault()
@@ -53,7 +78,7 @@ const CreateCatCard = (props) => {
       <h3>Add a cat!</h3>
       {!cattributes && <strong>You have overspent on cattributes! 20 Max!</strong>}
       {invalid && <strong>You have missed a cattribute!</strong>}
-      <input type="text" name="catName" placeholder="Name of Cat" 
+      <input type="text" name="catName" placeholder="Name of Cat"
         onChange={element => onChange(element)}
       />
       <input type="number" name="cattitude" placeholder="Cattitude" min="1" max="10"
@@ -65,7 +90,8 @@ const CreateCatCard = (props) => {
       <input type="number" name="chonk" placeholder="Chonk" min="1" max="10"
         onChange={element => onChange(element)}
       />
-      <input type="file" name="image" onChange={element => onChange(element)} />
+      <input type="file" name="image" id="file" accept=".jpeg, .png, .jpg"
+      onChange={element => onChange(element)} />
       <input type="submit" className="button"/>
     </form>
   </div>
