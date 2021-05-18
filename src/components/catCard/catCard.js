@@ -5,7 +5,7 @@ import spareImg from '../../svg/cat2_1.svg'
 import { AuthContext } from '../../App'
 import DeleteButton from '../catCardButtons/catCardButtons.js'
 
-const Cat = ({ catName, user_id, cattitude, floof, chonk, image }) => {
+const Cat =  ( { catName, user_id, cattitude, floof, chonk, image } ) => {
   const { state } = React.useContext(AuthContext)
 
   if(!image) {
@@ -24,6 +24,7 @@ const Cat = ({ catName, user_id, cattitude, floof, chonk, image }) => {
       <h2 className="Cat-name">🐾 {catName}</h2>
       <div className="Cat-attributes">
         <table className="Cat-table">
+          <tbody>
           <tr>
             <th>Cattitude</th>
             <td>{cattitude}</td>
@@ -36,9 +37,11 @@ const Cat = ({ catName, user_id, cattitude, floof, chonk, image }) => {
             <th>Chonk</th>
             <td>{chonk}</td>
           </tr>
+          </tbody>
         </table>
       </div>
-      {state.user === user_id ? <><DeleteButton name={catName} /><PlayGameButton /></> : null }
+      {/* <PlayGameButton /> */}
+      {state.user === user_id ? <><DeleteButton name={catName} /></> : null }
       <SpottedButton />
     </div>
   )

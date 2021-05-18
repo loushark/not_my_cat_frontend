@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { AuthContext } from '../../App'
+import React from 'react';
 import axios from 'axios';
 
-const DeleteButton = ({catName}) => {
-  const { state } = React.useContext(AuthContext)
+const DeleteButton = ( { catName } ) => {
 
-    axios.DELETE(`http://localhost:8082/api/cats/${catName}`)
+  const onClickHandler = () => {
+    axios.delete(`http://localhost:8082/api/cats/${catName}`)
     .then(response => {
       if (response === 200) {
         console.log(response)
@@ -15,11 +13,14 @@ const DeleteButton = ({catName}) => {
     .catch(error => {
       console.log(error)
     })
-    return (
-      <>
-      <button>Delete Cat</button>
-      </>
-    )}
 
+    // props.history.push('/profile')
+  }
+   
+  return (
+    <>
+    <button className='button' onClick={onClickHandler}>Delete Cat</button>
+    </>
+  )}
 
 export default DeleteButton;

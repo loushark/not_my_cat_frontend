@@ -170,6 +170,7 @@ input {
   text-decoration: none;
   font-family: 'Fira Sans', sans-serif;
   transition-duration: 0.4s;
+  cursor: pointer;
 }
 
 .button:hover {
