@@ -7,7 +7,6 @@ const DeleteButton = ( { catName } ) => {
   const onClickHandler = () => {
     axios.delete(`http://localhost:8082/api/cats/${catName}`)
     .then(response => {
-      console.log(response)
       if (response.status === 200) {
         setDeleteSuccess(true)
       }

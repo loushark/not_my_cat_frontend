@@ -1,10 +1,16 @@
+@fontface {
+  font-family: 'Fredoka One', sans-serif;
+  src: url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap'),
+  }
+
+
 html {
-  background: linear-gradient(130deg, #c7ede9 50%, #c7dded 50%);
+  background: linear-gradient(105deg, #51d7d0 50%, #fbea5e 50%);
 }
 
 .App {
   text-align: center;
-  background: linear-gradient(130deg, #c7ede9 50%, #c7dded 50%);
+  background: linear-gradient(105deg, #51d7d0 50%, #fbea5e 50%);
   min-height: 1000px;
   font-family: 'Fira Sans', sans-serif;
 }
@@ -13,7 +19,7 @@ a {
   margin: 5px;
   padding: 5px;
   background-color: white;
-  border: 1px solid #E6B655;
+  border: 1px solid #8551a8;
   border-radius: 10px;
   font-size: 15px;
   color: black;
@@ -30,13 +36,13 @@ a {
 
 .App-header {
   background-color: white;
-  min-height: 10vh;
+  min-height: 18vh;
   display: flex;
   width: 100%;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: #E6B655;
+  color: #8551a8;
   font-family: 'Fira Sans', sans-serif;
   box-shadow: 5px 5px 8px #888888;
 }
@@ -51,7 +57,7 @@ a {
   font-size: 16px;
   background-color: white;
   color: black;
-  border: 2px solid #fcb243;
+  border: 2px solid #8551a8;
   text-decoration: none;
   font-family: 'Fira Sans', sans-serif;
   transition-duration: 0.4s;
@@ -59,7 +65,7 @@ a {
 }
 
 .tab-list-item:hover {
-  background-color: #fcb243;
+  background-color: #8551a8;
   color: white;
 }
 
@@ -81,8 +87,9 @@ a {
 .Cat-id {
   width: 320px;
   height: 550px;
+  /* background-image: url('./grainy.png'); */
   background-color: white;
-  border: 2px dashed #E6B655;
+  border: 2px dashed #8551a8;
   border-radius: 15px;
   align-items: center;
   margin: 15px;
@@ -95,8 +102,23 @@ a {
   justify-content: center;
 }
 
+th {
+  text-align: end;
+}
+
 .Cat-header {
-  font-size: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Cat-nametitle {
+  font-size: 1em;
+}
+
+.Cat-username {
+  font-size: 1.5em;
+  margin-left: 10px;
 }
 
 .Cat-footer {
@@ -110,7 +132,7 @@ a {
   width: 220px;
   height: 220px;
   overflow: hidden;
-  border: 2px solid #E6B655;
+  border: 2px solid #8551a8;
   border-radius: 15px;
   position: relative;
 }
@@ -128,7 +150,7 @@ a {
 }
 
 .Cat-name {
-  color: #E6B655;
+  color: #8551a8;
 }
 
 .grow {
@@ -156,11 +178,28 @@ a {
 
 /* title */
 
+.header-logo {
+  pointer-events: none;
+  float: left;
+  margin-right: 5vw;
+  animation: Spin 2s;
+}
+
+@keyframes Spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .title {
   font-family: 'Fredoka One', cursive;
   font-size: 7vw;
   /* background-image: url("/src/paisley-cats.jpg"); */
-  background: linear-gradient(90deg, #e0d82f, #e1c62f, #e2b430, #e3a230, #e49031, #e57d31, #e66b32);
+  /* background: linear-gradient(90deg, #fbea5e, #e6ec65, #d1ed6f, #bded7a, #a9ec86, #97eb93, #85e99f, #75e6ab, #66e3b6, #5bdfc0, #53dbc9, #51d7d0); */
+  background: linear-gradient(90deg, #51d7d0, #53dbc9, #5bdfc0, #66e3b6, #75e6ab, #85e99f, #97eb93, #a9ec86, #bded7a, #d1ed6f, #e6ec65, #fbea5e);
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
@@ -179,7 +218,7 @@ input {
   font-size: 16px;
   background-color: white;
   color: black;
-  border: 2px solid #fcb243;
+  border: 2px solid #8551a8;
 }
 
 .button, button {
@@ -189,7 +228,7 @@ input {
   font-size: 16px;
   background-color: white;
   color: black;
-  border: 2px solid #fcb243;
+  border: 2px solid #8551a8;
   text-decoration: none;
   font-family: 'Fira Sans', sans-serif;
   transition-duration: 0.4s;
@@ -197,7 +236,7 @@ input {
 }
 
 .button:hover {
-  background-color: #fcb243;
+  background-color: #8551a8;
   color: white;
 }
 
@@ -206,6 +245,10 @@ input {
 }
 
 /*Maps*/
+
+.cat-map {
+  margin-top: 20px;
+}
 
 .marker {
   width: 30px;
@@ -216,17 +259,19 @@ input {
   /* make this smaller, and cat card responsive to size change */
 }
 
+
+
 /* welcome message */
 
 .speech-bubble h3 {
   margin: 5px;
-  color: #fcb243;
+  color: #8551a8;
 }
 
 .speech-bubble {
   width: 300px;
   margin: 10px;
-  border: 4px solid #fcb243;
+  border: 4px solid #8551a8;
   padding: 10px;
   border-radius: 8px;
   text-align: center;
@@ -244,8 +289,8 @@ input {
   height: 0px;
   position: absolute;
   border-left: 10px solid transparent;
-  border-right: 10px solid #fcb243;
-  border-top: 10px solid #fcb243;
+  border-right: 10px solid #8551a8;
+  border-top: 10px solid #8551a8;
   border-bottom: 10px solid transparent;
   left: -21px;
   top: 6px;
@@ -262,4 +307,47 @@ input {
   border-bottom: 7px solid transparent;
   left: -11px;
   top: 10px;
+}
+
+
+/* trees */
+
+.logo2 {
+  height: 8vmin;
+  animation: bounce 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+0%,
+25%,
+50%,
+75%,
+100% {
+  transform: translateY(0);
+  }
+40% {
+  transform: translateY(-10px);
+  }
+}
+
+.logo3 {
+padding-top:10px;
+  height: 7vmin;
+  margin-left: -8px;
+  animation: bounce1 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce1 {
+0%,
+25%,
+50%,
+75%,
+100% {
+  transform: translateY(0);
+  }
+60% {
+  transform: translateY(-10px);
+  }
 }

@@ -5,12 +5,12 @@
         fill:none;
       }
       .cls-1, .cls-2 {
-        stroke:#7ABD51;
+        stroke:black;
         stroke-miterlimit:10;
         stroke-width:4px;
       }
       .cls-2 {
-        fill:#7ABD51;
+        fill:white;
       }
     </style>
   </defs>

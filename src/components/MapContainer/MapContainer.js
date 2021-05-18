@@ -1,12 +1,9 @@
 import '../../App.css';
 import React, { useState, useEffect } from 'react';
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
-import useCats from '../../hooks/use-cats';
-import CatMapList from '../catMapList/catMapList.js'
+import useCats from '../../hooks/useCats';
 import Cat from '../catCard/catCard.js'
-import logo from '../../cat.svg';
-require ('dotenv/config');
-
+import logo from '../../svg/catchin.svg';
 
 const MapContainer = () => {
   const [cats] = useCats();
@@ -51,7 +48,7 @@ const MapContainer = () => {
           <div className='marker'>
           <Marker
             icon={logo}
-            key={cat._id}
+            key={`cat-${cat._id}`}
             position={cat.position}
             onClick={() => onSelect(cat)}
           />
