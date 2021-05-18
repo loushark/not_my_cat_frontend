@@ -41,7 +41,7 @@ const LoginForm = (props) => {
   return (
     <form className="login-form" onSubmit={element => login(element)}>
       <h3>Login to add your cats!</h3>
-      {invalid && <strong>User details are incorrect!</strong>}
+      {invalid && <><strong>User details are incorrect!</strong><br></br></>}
       <input type="text"
        name="username"
        placeholder="Username"

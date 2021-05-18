@@ -23,8 +23,19 @@ const CreateCatCard = (props) => {
   const [cattributes, setCattributes] = useState(true)
 
   const onChange = (element) => {
+    if (element.target.id === "file") {
+      let file = element.target.files[0];
+
+      getBase64(file)
+      .then((result) => {
+        setPostData((prevState) => ({...prevState, image: result}))
+      })      
+    }
+    else {
     setPostData((prevState) => ({...prevState, [element.target.name]: element.target.value }))
+    }
   }
+
 
   const getLocation = (options) => {
     return new Promise((position, error) => {
@@ -43,6 +54,19 @@ const CreateCatCard = (props) => {
     })
   }, [])
 
+  const getBase64 = (file) => {
+    return new Promise((resolve) => {
+      let base64image
+      let reader = new FileReader();
+      reader.readAsDataURL(file)
+
+      reader.onload = () => {
+        base64image = reader.result
+        resolve(base64image)
+      }
+    })
+  }
+
   const createCat = (element) => {
     element.preventDefault()
 
@@ -57,6 +81,7 @@ const CreateCatCard = (props) => {
     .then(response => {
       if (response.status === 201) {
         props.history.push('/')
+        window.location.reload();
       }
     })
     .catch(error => {
@@ -86,7 +111,8 @@ const CreateCatCard = (props) => {
       <input type="number" name="chonk" placeholder="Chonk" min="1" max="10"
         onChange={element => onChange(element)}
       />
-      <input type="file" name="image" onChange={element => onChange(element)} />
+      <input type="file" name="image" id="file" accept=".jpeg, .png, .jpg"
+      onChange={element => onChange(element)} />
       <input type="submit" className="button"/>
     </form>
   </div>

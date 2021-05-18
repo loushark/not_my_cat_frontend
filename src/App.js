@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './bobcat.png';
 import './App.css';
 import LoginButton from './components/LoginButton/LoginButton.js'
 import LogoutButton from './components/LogoutButton/LogoutButton.js'
@@ -11,9 +10,11 @@ import CreateCatCard from './components/CreateCatCard/CreateCatCard.js'
 import CatList from './components/catList/catList.js'
 import Tabs from './components/Tab/Tabs.js'
 import MapContainer from './components/MapContainer/MapContainer.js'
+import UserProfile from './components/UserProfile/UserProfile.js'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { ReactComponent as Copse } from './svg/copse.svg'
 import { ReactComponent as CatImg } from './svg/cat1.svg'
+import useCats from './hooks/useCats'
 
 export const AuthContext = React.createContext();
 
@@ -48,6 +49,7 @@ const reducer = (state, action) => {
 
 export default function App() {
   const [state, dispatch] = React.useReducer(reducer, initialState);
+  const [listCats] = useCats();
 
   React.useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user") || null)
@@ -79,18 +81,23 @@ export default function App() {
               <LoginButton />
               <SignUpButton />
               </> : <><LogoutButton />
-              <CreateCatCardButton /></>}
+              <CreateCatCardButton />
+              <Link to='/profile' className='button'>Profile</Link></>}
             </div>
-          {!state.isAuthenticated ? <p className="latest-cats">Login to see all the latest cats</p>
-          : <p className="latest-cats">Here are all the finest picks!</p>}
           <div className="cat-list">
             <Route path= '/signup' component={SignUpForm} />
             <Route path= '/new-cat' component={CreateCatCard} />
             <Route path= '/login' component={LoginForm} />
+            <Route path= '/profile'>
+              <p className="latest-cats">Here are all your cats!</p>
+              <UserProfile />
+            </Route>
           </div>
+          {!state.isAuthenticated ? <p className="latest-cats">Login to see all the latest cats</p>
+          : <p className="latest-cats">Here are all the finest picks!</p>}
           <Tabs className="tabs-div">
             <div label="view all cats">
-              <CatList props={state}/>
+              <CatList props={state} list={listCats} />
             </div>
             <div label="view cat map">
               <MapContainer className="cat-map" />
