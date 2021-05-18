@@ -8,6 +8,8 @@ import LoginForm from './components/LoginForm/LoginForm.js'
 import CreateCatCardButton from './components/CreateCatCardButton/CreateCatCardButton.js'
 import CreateCatCard from './components/CreateCatCard/CreateCatCard.js'
 import CatList from './components/catList/catList.js'
+import Tabs from './components/Tab/Tabs.js'
+import MapContainer from './components/MapContainer/MapContainer.js'
 import UserProfile from './components/UserProfile/UserProfile.js'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { ReactComponent as Copse } from './svg/copse.svg'
@@ -71,7 +73,7 @@ export default function App() {
             <Link to="/" className="title"><h1 className="title">NOT MY CAT</h1></Link>
             <Copse />
             {state.isAuthenticated && <div className="speech-bubble">
-              <h3>What up {state.user}!</h3> 
+              <h3>What up {state.user}!</h3>
             </div>}
           </header>
           <div className="nav">
@@ -93,7 +95,14 @@ export default function App() {
           </div>
           {!state.isAuthenticated ? <p className="latest-cats">Login to see all the latest cats</p>
           : <p className="latest-cats">Here are all the finest picks!</p>}
-          <CatList list={listCats}/>
+          <Tabs className="tabs-div">
+            <div label="view all cats">
+              <CatList props={state} list={listCats} />
+            </div>
+            <div label="view cat map">
+              <MapContainer className="cat-map" />
+            </div>
+          </Tabs>
         </Router>
       </div>
     </AuthContext.Provider>
