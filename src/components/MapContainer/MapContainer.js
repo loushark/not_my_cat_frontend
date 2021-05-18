@@ -1,12 +1,18 @@
 // import './App.css';
-import React from 'react';
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import React, { useState } from 'react';
+import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
 import useCats from '../../hooks/use-cats';
 import CatMapList from '../catMapList/catMapList.js'
 require ('dotenv/config');
 
 const MapContainer = () => {
-const [cats] = useCats();
+  const [cats] = useCats();
+  const [ selected, setSelected ] = useState({});
+
+  const onSelect = cat => {
+    setSelected(cat);
+  }
+
   const mapStyles = {
     height: "80vh",
     width: "80%",
@@ -29,9 +35,18 @@ const [cats] = useCats();
           <Marker
             key={cat._id}
             position={cat.position}
+            onClick={() => onSelect(cat)}
           />
         )
       })}
+      {selected.position && (<InfoWindow
+        position={selected.position}
+        clickable={true}
+        onCloseClick={() => setSelected({})}
+      >
+        <p>{selected.catName}</p>
+      </InfoWindow>
+        )}
       </GoogleMap>
     </LoadScript>
   )
