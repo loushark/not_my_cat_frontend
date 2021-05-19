@@ -16,8 +16,6 @@ const Cat =  ( { catName, user_id, cattitude, floof, chonk, image } ) => {
     chonk: chonk,
     image: image
   }
-  
-  console.log(catData)
 
   if(!image) {
     image = spareImg

@@ -22,7 +22,7 @@ const DeleteButton = ( { catName } ) => {
       window.location.reload();
     }
   }, [deleteSuccess])
-   
+
   return (
     <>
     <button className='button' onClick={() => {if(window.confirm('Are you sure you want to delete this cat?')) onClickHandler() }} >Delete Cat</button>
@@ -32,8 +32,6 @@ const DeleteButton = ( { catName } ) => {
 
 
 const PlayGameButton = ( catData ) => {
-
-  console.log(catData)
 
   return (
     <>
