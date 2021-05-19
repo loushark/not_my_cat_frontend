@@ -6,10 +6,10 @@ import { AuthContext } from "../../App";
 const LogoutButton = (props) => {
 
   const { dispatch } = React.useContext(AuthContext);
- 
+
   return (
     <>
-    <Link to="/" className="button" onClick={() => dispatch({type: "LOGOUT"})}>Logout</Link>
+    <Link to="/" className="button-nav" onClick={() => dispatch({type: "LOGOUT"})}>Logout</Link>
     </>
   );
 };

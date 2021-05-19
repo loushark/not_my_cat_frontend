@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const LoginButton = () => {
   return (
     <>
-    <Link to="/login" className="button">Login</Link>
+    <Link to="/login" className="button-nav">Login</Link>
     </>
   );
 };
