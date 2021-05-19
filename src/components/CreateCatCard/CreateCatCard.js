@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AuthContext } from "../../App";
 import axios from 'axios';
 import Cat from '../catCard/catCard.js'
@@ -12,7 +12,11 @@ const CreateCatCard = (props) => {
     cattitude: 0,
     floof: 0,
     chonk: 0,
-    image: ""
+    image: "",
+    location: {
+      lng: 0,
+      lat: 0
+      }
   })
 
   const [invalid, setInvalid] = useState(false)
@@ -32,6 +36,24 @@ const CreateCatCard = (props) => {
     }
   }
 
+
+  const getLocation = (options) => {
+    return new Promise((position, error) => {
+      navigator.geolocation.getCurrentPosition(position, error, options)
+    })
+  }
+
+  useEffect(() => {
+    getLocation({timeout:10000})
+    .then((position) => {
+      setPostData((prevState) => ({...prevState, position: {lat: position.coords.latitude, lng: position.coords.longitude} }))
+      // setPostData((prevState) => ({...prevState, position: {lng: position.coords.longitude} }))
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+  }, [])
+
   const getBase64 = (file) => {
     return new Promise((resolve) => {
       let base64image
@@ -44,7 +66,6 @@ const CreateCatCard = (props) => {
       }
     })
   }
-
 
   const createCat = (element) => {
     element.preventDefault()
