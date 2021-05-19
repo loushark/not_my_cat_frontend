@@ -7,9 +7,11 @@ import Cat from '../catCard/catCard.js'
 const SpottedButton = ( { timesSpotted, catName } ) => {
 
   const onClickHandler = () => {
+    console.log(timesSpotted)
     timesSpotted += 1
-    axios.put(`http://localhost:8082/api/cats/${catName}`, {timesSpotted: timesSpotted})
+    axios.put(`http://localhost:8082/api/cats/${catName}`, {timesSpotted: (timesSpotted)})
     .then(response => {
+      console.log(response)
       if (response.status === 200) {
         window.location.reload();
       }
