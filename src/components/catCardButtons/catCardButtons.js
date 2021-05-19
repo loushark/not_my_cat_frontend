@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const DeleteButton = ( { catName } ) => {
@@ -21,7 +22,7 @@ const DeleteButton = ( { catName } ) => {
       window.location.reload();
     }
   }, [deleteSuccess])
-   
+
   return (
     <>
     <button className='button' onClick={() => {if(window.confirm('Are you sure you want to delete this cat?')) onClickHandler() }} >Delete Cat</button>
@@ -29,4 +30,14 @@ const DeleteButton = ( { catName } ) => {
   )
 }
 
-export default DeleteButton;
+
+const PlayGameButton = ( catData ) => {
+
+  return (
+    <>
+      <Link to={{pathname:'/top-cat', catData:{...catData}}}  className='button'>Play Top Cat!</Link>
+    </>
+  )
+}
+
+export { DeleteButton, PlayGameButton };

@@ -3,10 +3,19 @@ import SpottedButton from '../SpottedButton/SpottedButton.js'
 import '../../App.css';
 import spareImg from '../../svg/cat1.svg'
 import { AuthContext } from '../../App'
-import DeleteButton from '../catCardButtons/catCardButtons.js'
+import { DeleteButton, PlayGameButton } from '../catCardButtons/catCardButtons.js'
 
 const Cat =  ( { catName, user_id, cattitude, floof, chonk, image, wins, timesSpotted } ) => {
   const { state } = React.useContext(AuthContext)
+
+  const catData = {
+    catName: catName,
+    user_id: user_id,
+    cattitude: cattitude,
+    floof: floof,
+    chonk: chonk,
+    image: image
+  }
 
   if(!image) {
     image = spareImg
@@ -46,9 +55,8 @@ const Cat =  ( { catName, user_id, cattitude, floof, chonk, image, wins, timesSp
         </table>
       </div>
       <div className='Cat-footer'>
-      {/* <PlayGameButton /> */}
-      {state.user === user_id ? <><DeleteButton catName={catName} /></> : null }
-      <SpottedButton timesSpotted={timesSpotted} catName={catName} />
+        {state.user === user_id ? <><DeleteButton catName={catName} /><PlayGameButton {...catData}/></> : null }
+        <SpottedButton timesSpotted={timesSpotted} catName={catName} />
       </div>
     </div>
   )

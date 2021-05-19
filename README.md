@@ -31,3 +31,8 @@ https://kentcdodds.com/blog/the-state-reducer-pattern-with-react-hooks
 \/ this for verifying on backend
 
 https://medium.com/@maison.moa/using-jwt-json-web-tokens-to-authorize-users-and-protect-api-routes-3e04a1453c3e
+
+
+passing objects via link to router
+
+https://ui.dev/react-router-v5-pass-props-to-link/
