@@ -235,7 +235,7 @@ input {
   cursor: pointer;
 }
 
-.button:hover {
+.button:hover, button:hover {
   background-color: #8551a8;
   color: white;
 }
@@ -355,6 +355,7 @@ padding-top:10px;
 /* topcat game */
 
 .topcat-box {
+  align-items: center;
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
@@ -367,4 +368,10 @@ padding-top:10px;
 
 .topcat-opponent {
   margin-left: 5vw;
+}
+
+.topcat-buttons-box {
+  width: 160px;
+  height: 250px;
+  background-color: white;
 }

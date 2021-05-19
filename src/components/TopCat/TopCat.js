@@ -8,8 +8,8 @@ const TopCat = () => {
   const location = useLocation();
   const [catData, setCatData] = useState(location.catData ? location.catData : JSON.parse(localStorage.getItem("catInPlay")));
 
-  let opponents = listCats.filter((cat) => cat.catName !== catData.catName)
-  let opponent = opponents[Math.floor(Math.random() * opponents.length)]
+  const opponents = listCats.filter((cat) => cat.catName !== catData.catName)
+  const opponent = opponents[Math.floor(Math.random() * opponents.length)]
 
   const storeCatData = () => {
     if(location.catData){
@@ -22,10 +22,29 @@ const TopCat = () => {
     localStorage.setItem("catInPlay", JSON.stringify(catData))
   }, [])
 
+  const compareCattribute = (cattribute) => {
+    console.log('user cat', catData[cattribute])
+    console.log('opponent cat', opponent[cattribute])
+    if(catData[cattribute] > opponent[cattribute]) {
+      console.log('you win')
+    } else if (catData[cattribute] === opponent[cattribute]) {
+      console.log('it was a draw')
+    } else {
+      console.log('you lose')
+    }
+  }
+
+
   return (
     <div className='topcat-box'>
       <div className='topcat-user'>
         <CatCard {...catData}/>
+      </div>
+      <div className='topcat-buttons-box'>
+        <h1>Cat fight!</h1>
+        <button id='cattitude' onClick={element => compareCattribute(element.target.id)}>Cattitude</button>
+        <button id='floof' onClick={element => compareCattribute(element.target.id)}>Floofiness</button>
+        <button id='chonk' onClick={element => compareCattribute(element.target.id)}>Chonk</button>
       </div>
       <div className='topcat-opponent'>
         <CatCard {...opponent}/>
