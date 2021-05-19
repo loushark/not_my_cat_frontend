@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import LoginButton from './components/LoginButton/LoginButton.js'
 import LogoutButton from './components/LogoutButton/LogoutButton.js'
 import SignUpButton from './components/SignUpButton/SignUpButton.js'
