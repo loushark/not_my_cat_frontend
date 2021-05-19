@@ -20,7 +20,7 @@ const SpottedButton = ( { wins, timesSpotted, catName } ) => {
 
   return (
     <>
-    <p> Spotted {timesSpotted} times</p>
+    {timesSpotted === 1 ? <p>Spotted {timesSpotted} time</p> : <p>Spotted {timesSpotted} times</p>}
     <button onClick={() => onClickHandler() } className='button'>Spotted!</button>
     </>
   );
