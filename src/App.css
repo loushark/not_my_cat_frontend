@@ -44,7 +44,6 @@ a {
   font-size: calc(10px + 2vmin);
   color: #8551a8;
   font-family: 'Fira Sans', sans-serif;
-  box-shadow: 5px 5px 8px #888888;
 }
 
 /*Tabs*/
@@ -70,6 +69,11 @@ a {
 }
 
 /*catCard styling*/
+
+.latest-cats {
+  margin-top: 80px;
+  font-size: 25px;
+}
 
 .cat-list {
   width: 100%;
@@ -181,7 +185,8 @@ th {
 .header-logo {
   pointer-events: none;
   float: left;
-  margin-right: 5vw;
+  margin-right: 3vw;
+  margin-top: 3vw;
   animation: Spin 2s;
 }
 
@@ -196,7 +201,7 @@ th {
 
 .title {
   font-family: 'Fredoka One', cursive;
-  font-size: 7vw;
+  font-size: 6vw;
   /* background-image: url("/src/paisley-cats.jpg"); */
   /* background: linear-gradient(90deg, #fbea5e, #e6ec65, #d1ed6f, #bded7a, #a9ec86, #97eb93, #85e99f, #75e6ab, #66e3b6, #5bdfc0, #53dbc9, #51d7d0); */
   background: linear-gradient(90deg, #51d7d0, #53dbc9, #5bdfc0, #66e3b6, #75e6ab, #85e99f, #97eb93, #a9ec86, #bded7a, #d1ed6f, #e6ec65, #fbea5e);
@@ -206,6 +211,7 @@ th {
   color: transparent;
   border: none;
   margin: unset;
+  margin-left: 5vw;
 }
 
 /* form, nav and buttons */
@@ -242,7 +248,35 @@ input {
 
 .nav {
   width: 100%;
+  height: 60px;
+  margin-top: -2px;
+  margin-bottom: 10px;
+  background-color: white;
+  /* box-shadow: 0px 5px 8px -2px #888888; */
+  box-shadow: 0 4px 2px -2px #888888;
 }
+
+.button-nav {
+  margin: 10px;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #8551a8;
+  color: white;
+  border: 2px solid #8551a8;
+  box-shadow: 3px 3px 8px #888888;
+  text-decoration: none;
+  font-family: 'Fira Sans', sans-serif;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button-nav:hover {
+  background-color: white;
+  color: black;
+}
+
 
 /*Maps*/
 
@@ -267,18 +301,18 @@ input {
 }
 
 .speech-bubble {
-  width: 300px;
-  margin: 10px;
-  border: 4px solid #8551a8;
-  padding: 10px;
+  width: 200px;
+  margin-left: 20px;
+  border: 3px solid #8551a8;
+  padding: 2px;
   border-radius: 8px;
   text-align: center;
-  font-weight: 900;
+  font-size: 20px;
   font-family: arial;
   background-color: white;
   position: relative;
   transform: rotateZ(9deg);
-  box-shadow: 5px 5px 8px #888888;
+  box-shadow: 3px 3px 8px #888888;
 }
 
 .speech-bubble:before {
