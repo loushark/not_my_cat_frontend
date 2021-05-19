@@ -48,7 +48,7 @@ const Cat =  ( { catName, user_id, cattitude, floof, chonk, image, wins, timesSp
       <div className='Cat-footer'>
       {/* <PlayGameButton /> */}
       {state.user === user_id ? <><DeleteButton catName={catName} /></> : null }
-      <SpottedButton timesSpotted={timesSpotted} />
+      <SpottedButton timesSpotted={timesSpotted} catName={catName} />
       </div>
     </div>
   )
