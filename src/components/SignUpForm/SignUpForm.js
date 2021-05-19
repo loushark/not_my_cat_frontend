@@ -38,19 +38,19 @@ const SignUpForm = (props) => {
       {invalid && <strong>Email has already been used!</strong>}
       {signUp && <strong>Sign-Up successful!</strong>}
       <input type="text"
-      name="_id"
-      placeholder="Username"
-      onChange={element => onChange(element)}/>
+        name="_id"
+        placeholder="Username"
+        onChange={element => onChange(element)}/>
       <br />
       <input type="email"
-      name="email"
-      placeholder="Email"
-      onChange={element => onChange(element)} />
+        name="email"
+        placeholder="Email"
+        onChange={element => onChange(element)} />
       <br />
       <input type="password"
-      name="password"
-      placeholder="Password"
-      onChange={element => onChange(element)} />
+        name="password"
+        placeholder="Password"
+        onChange={element => onChange(element)} />
       <br />
       <input type="submit" className="button"/>
     </form>

@@ -13,15 +13,13 @@ const SpottedButton = ( { wins, timesSpotted, catName } ) => {
         window.location.reload();
       }
     })
-    .catch(error => {
-      console.log(error)
-    })
-    }
+    .catch(error => {console.log(error)})
+  }
 
   return (
     <>
-    {timesSpotted === 1 ? <p>Spotted {timesSpotted} time</p> : <p>Spotted {timesSpotted} times</p>}
-    <button onClick={() => onClickHandler() } className='button'>Spotted!</button>
+      {timesSpotted === 1 ? <p>Spotted {timesSpotted} time</p> : <p>Spotted {timesSpotted} times</p>}
+      <button onClick={() => onClickHandler() } className='button'>Spotted!</button>
     </>
   );
 };

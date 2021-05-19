@@ -3,7 +3,6 @@ import { AuthContext } from "../../App";
 import axios from 'axios';
 
 const LoginForm = (props) => {
-
   const { dispatch } = React.useContext(AuthContext);
   const [userData, setUserData] = useState({
     username: '',
@@ -43,14 +42,14 @@ const LoginForm = (props) => {
       <h3>Login to add your cats!</h3>
       {invalid && <><strong>User details are incorrect!</strong><br></br></>}
       <input type="text"
-       name="username"
-       placeholder="Username"
-       onChange={element => onChange(element)}/>
+        name="username"
+        placeholder="Username"
+        onChange={element => onChange(element)}/>
       <br />
       <input type="password"
-      name="password"
-      placeholder="Password"
-      onChange={element => onChange(element)}/>
+        name="password"
+        placeholder="Password"
+        onChange={element => onChange(element)}/>
       <br />
       <input type="submit" className="button"/>
     </form>

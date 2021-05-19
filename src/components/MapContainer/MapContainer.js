@@ -24,11 +24,8 @@ const MapContainer = () => {
   const mapStyles = {
     height: "80vh",
     width: "80%",
-    margin: 'auto'};
-
-  const defaultCenter = {
-    lat:51.514401, lng: -0.105196
-  }
+    margin: 'auto'
+  };
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(success);

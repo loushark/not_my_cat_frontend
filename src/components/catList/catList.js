@@ -3,8 +3,6 @@ import Cat from '../catCard/catCard.js'
 import '../../App.css';
 
 const CatList = ( { list, state } ) => {
-  
-
   return (
     <div className="cat-list">
       <div className="cat-list-row">

@@ -49,7 +49,6 @@ const CreateCatCard = (props) => {
     getLocation({timeout:10000})
     .then((position) => {
       setPostData((prevState) => ({...prevState, position: {lat: position.coords.latitude, lng: position.coords.longitude} }))
-      // setPostData((prevState) => ({...prevState, position: {lng: position.coords.longitude} }))
     })
     .catch((error) => {
       console.log(error)

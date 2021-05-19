@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from "../../App";
 
 
-const LogoutButton = (props) => {
-
+const LogoutButton = () => {
   const { dispatch } = React.useContext(AuthContext);
 
   return (
