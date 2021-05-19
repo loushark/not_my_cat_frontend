@@ -153,6 +153,19 @@ th {
   color: #8551a8;
 }
 
+.Cat-crown {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+}
+
+.Cat-wins {
+  position: relative;  
+}
+.Cat-wins p {
+  font-size: x-small;
+}
+
 .grow {
   transition: all .2s ease-in-out;
 }
