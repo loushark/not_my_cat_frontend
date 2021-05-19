@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { AuthContext } from "../../App";
+import axios from 'axios';
+import Cat from '../catCard/catCard.js'
 
-const SpottedButton = () => {
+
+const SpottedButton = ( { timesSpotted } ) => {
   return (
     <>
-    <p> Spotted 15 times</p>
-    <button className='button'>Spotted!</button>
+    <p> Spotted {timesSpotted} times</p>
+    <button onclick="" className='button'>Spotted!</button>
     </>
   );
 };
