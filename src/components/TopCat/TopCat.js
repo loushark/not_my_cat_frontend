@@ -41,6 +41,7 @@ const TopCat = () => {
     } else {
       setResult('Your cat lost!')
       addWins(opponent.current)
+      opponent.current.wins += 1
     }
   }
 

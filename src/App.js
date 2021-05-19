@@ -84,7 +84,7 @@ export default function App(props) {
               <SignUpButton />
               </> : <><LogoutButton />
               <CreateCatCardButton />
-              <Link to='/profile' className='button'>Profile</Link>
+              <Link to='/profile' className='button'>My Cats</Link>
               <Link to='/catmap' className='button'>Cat Map</Link>
               </>}
             </div>
