@@ -23,14 +23,14 @@ const TopCat = () => {
   }, [])
 
   return (
-    <>
-      <div>
+    <div className='topcat-box'>
+      <div className='topcat-user'>
         <CatCard {...catData}/>
       </div>
-      <div>
+      <div className='topcat-opponent'>
         <CatCard {...opponent}/>
       </div>
-    </>
+    </div>
   )
 }
 
