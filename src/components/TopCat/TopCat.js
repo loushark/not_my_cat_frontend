@@ -2,6 +2,7 @@ import CatCard from '../catCard/catCard'
 import useCats from '../../hooks/useCats'
 import { useLocation } from 'react-router-dom'
 import { useState, useEffect, useRef } from 'react'
+import { ReactComponent as CardBack } from '../../svg/Asset_12.svg' 
 import axios from 'axios'
 
 const TopCat = () => {
@@ -27,11 +28,17 @@ const TopCat = () => {
   }
 
   useEffect(() => {
+    const cats = document.getElementsByClassName("Cat-id")
+    cats[1].classList.add('topcat-opponent-card')
     storeCatData()
     localStorage.setItem("catInPlay", JSON.stringify(catData))
   }, [])
 
   const compareCattribute = (cattribute) => {
+    const card = document.getElementsByClassName("Card-back")
+    const cats = document.getElementsByClassName("Cat-id")
+    cats[1].classList.remove('topcat-opponent-card')
+    card[0].classList.add('topcat-card-rotate')
     if(catData[cattribute] > opponent.current[cattribute]) {
       setResult('Your cat won!')
       addWins(catData)
@@ -54,6 +61,10 @@ const TopCat = () => {
   }
 
   const reset = () => {
+    const cats = document.getElementsByClassName("Cat-id")
+    cats[1].classList.add('topcat-opponent-card')
+    const card = document.getElementsByClassName("Card-back")
+    card[0].classList.remove('topcat-card-rotate')
     localStorage.setItem("catInPlay", JSON.stringify(catData))
     opponent.current = newOpponent()
     setResult('')
@@ -80,7 +91,8 @@ const TopCat = () => {
         }
       </div>
       <div className='topcat-opponent'>
-        <CatCard {...opponent.current}/>
+        <CardBack className='Card-back'/>
+        <CatCard {...opponent.current} className='topcat-opponent-card'/>
       </div>
     </div>
   )

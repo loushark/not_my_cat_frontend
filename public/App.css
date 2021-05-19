@@ -3,7 +3,6 @@
   src: url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap'),
   }
 
-
 html {
   background: linear-gradient(105deg, #51d7d0 50%, #fbea5e 50%);
 }
@@ -273,8 +272,6 @@ input {
   /* make this smaller, and cat card responsive to size change */
 }
 
-
-
 /* welcome message */
 
 .speech-bubble h3 {
@@ -389,7 +386,13 @@ padding-top:10px;
 }
 
 .topcat-opponent-card {
-  box-shadow: -5px 5px 8px #888888;
+  transition-timing-function: ease-in-out;
+  transform: rotateY(90deg)
+}
+
+.topcat-card-rotate {
+  transition-timing-function: ease-in-out;
+  transform: translateX(-177px) rotateY(-90deg) !important
 }
 
 .topcat-buttons-box {
@@ -399,4 +402,19 @@ padding-top:10px;
   border: 2px dashed #8551a8;
   border-radius: 15px;
   box-shadow: 0px 5px 8px #888888;
+}
+
+.Card-back {
+  z-index: 100;
+  transition-timing-function: ease-in-out;
+  position: absolute;
+  transform: translateX(-177px) rotateY(0deg);
+  width: 320px;
+  height: 550px;
+  background-color: #8eea99;
+  border: 2px Solid #8551a8;
+  border-radius: 15px;
+  align-items: center;
+  margin: 15px;
+  box-shadow: 5px 5px 8px #888888;
 }
