@@ -5,7 +5,7 @@ import spareImg from '../../svg/cat1.svg'
 import { AuthContext } from '../../App'
 import { DeleteButton, PlayGameButton } from '../catCardButtons/catCardButtons.js'
 
-const Cat =  ( { catName, user_id, cattitude, floof, chonk, image } ) => {
+const Cat =  ( { catName, user_id, cattitude, floof, chonk, image, wins, timesSpotted } ) => {
   const { state } = React.useContext(AuthContext)
 
   const catData = {
@@ -23,6 +23,11 @@ const Cat =  ( { catName, user_id, cattitude, floof, chonk, image } ) => {
 
   return (
     <div className="Cat-id grow">
+      <div className="Cat-wins">
+      <img className='Cat-crown' src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Heraldic_eastern_crown.svg/1200px-Heraldic_eastern_crown.svg.png"/>
+        <p>Wins</p>
+        <p>{wins}</p>
+      </div>
       <header className="Cat-header">
         <h1 className="Cat-nametitle">SPOTTED BY: </h1>
         <h1 className="Cat-username">{user_id}</h1>
@@ -50,8 +55,8 @@ const Cat =  ( { catName, user_id, cattitude, floof, chonk, image } ) => {
         </table>
       </div>
       <div className='Cat-footer'>
-      {state.user === user_id ? <><DeleteButton catName={catName} /><PlayGameButton {...catData}/></> : null }
-      <SpottedButton />
+        {state.user === user_id ? <><DeleteButton catName={catName} /><PlayGameButton {...catData}/></> : null }
+        <SpottedButton timesSpotted={timesSpotted} catName={catName} />
       </div>
     </div>
   )

@@ -16,7 +16,8 @@ const CreateCatCard = (props) => {
     location: {
       lng: 0,
       lat: 0
-      }
+    },
+    timesSpotted: 1
   })
 
   const [invalid, setInvalid] = useState(false)
@@ -29,7 +30,7 @@ const CreateCatCard = (props) => {
       getBase64(file)
       .then((result) => {
         setPostData((prevState) => ({...prevState, image: result}))
-      })      
+      })
     }
     else {
     setPostData((prevState) => ({...prevState, [element.target.name]: element.target.value }))
