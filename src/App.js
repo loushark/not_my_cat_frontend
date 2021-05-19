@@ -9,6 +9,7 @@ import CreateCatCard from './components/CreateCatCard/CreateCatCard.js'
 import CatList from './components/catList/catList.js'
 import MapContainer from './components/MapContainer/MapContainer.js'
 import UserProfile from './components/UserProfile/UserProfile.js'
+import TopCat from '../src/components/TopCat/TopCat.js'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { ReactComponent as Tree1 } from './svg/Asset_4.svg'
 import { ReactComponent as Tree2 } from './svg/Asset_7.svg'
@@ -47,7 +48,7 @@ const reducer = (state, action) => {
   }
 }
 
-export default function App() {
+export default function App(props) {
   const [state, dispatch] = React.useReducer(reducer, initialState);
   const [listCats] = useCats();
 
@@ -94,6 +95,9 @@ export default function App() {
             <Route path= '/profile'>
               <p className="latest-cats">Here are all your cats!</p>
               <UserProfile />
+            </Route>
+            <Route path= '/top-cat'>
+              <TopCat />
             </Route>
             <div className='cat-map'>
               <Route path= '/catmap'>

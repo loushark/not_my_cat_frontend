@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const DeleteButton = ( { catName } ) => {
@@ -29,4 +30,16 @@ const DeleteButton = ( { catName } ) => {
   )
 }
 
-export default DeleteButton;
+
+const PlayGameButton = ( catData ) => {
+
+  console.log(catData)
+
+  return (
+    <>
+      <Link to={{pathname:'/top-cat', catData:{...catData}}}  className='button'>Play Top Cat!</Link>
+    </>
+  )
+}
+
+export { DeleteButton, PlayGameButton };
