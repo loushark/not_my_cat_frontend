@@ -17,7 +17,8 @@ const CreateCatCard = (props) => {
       lng: 0,
       lat: 0
     },
-    timesSpotted: 1
+    timesSpotted: 1,
+    wins: 0
   })
 
   const [invalid, setInvalid] = useState(false)
