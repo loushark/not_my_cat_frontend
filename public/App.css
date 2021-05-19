@@ -156,14 +156,15 @@ th {
 .Cat-crown {
   height: 50px;
   width: 50px;
-  position: absolute;
+  /* position: absolute; */
 }
 
 .Cat-wins {
-  position: relative;  
+  position: absolute;
 }
 .Cat-wins p {
   font-size: x-small;
+  position: relative;
 }
 
 .grow {
