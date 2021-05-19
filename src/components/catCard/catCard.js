@@ -14,7 +14,9 @@ const Cat =  ( { catName, user_id, cattitude, floof, chonk, image, wins, timesSp
     cattitude: cattitude,
     floof: floof,
     chonk: chonk,
-    image: image
+    image: image,
+    timesSpotted: timesSpotted,
+    wins: wins
   }
 
   if(!image) {
@@ -24,7 +26,7 @@ const Cat =  ( { catName, user_id, cattitude, floof, chonk, image, wins, timesSp
   return (
     <div className="Cat-id grow">
       <div className="Cat-wins">
-      <img className='Cat-crown' src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Heraldic_eastern_crown.svg/1200px-Heraldic_eastern_crown.svg.png"/>
+      <img className='Cat-crown' src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Heraldic_eastern_crown.svg/1200px-Heraldic_eastern_crown.svg.png" alt='crown'/>
         <p>Wins</p>
         <p>{wins}</p>
       </div>
@@ -56,7 +58,7 @@ const Cat =  ( { catName, user_id, cattitude, floof, chonk, image, wins, timesSp
       </div>
       <div className='Cat-footer'>
         {state.user === user_id ? <><DeleteButton catName={catName} /><PlayGameButton {...catData}/></> : null }
-        <SpottedButton timesSpotted={timesSpotted} catName={catName} />
+        <SpottedButton timesSpotted={timesSpotted} wins={wins} catName={catName} />
       </div>
     </div>
   )
