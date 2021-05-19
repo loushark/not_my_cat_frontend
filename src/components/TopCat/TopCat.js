@@ -2,6 +2,7 @@ import CatCard from '../catCard/catCard'
 import useCats from '../../hooks/useCats'
 import { useLocation } from 'react-router-dom'
 import { useState, useEffect, useRef } from 'react'
+import axios from 'axios'
 
 const TopCat = () => {
   const [listCats] = useCats();
@@ -33,14 +34,27 @@ const TopCat = () => {
   const compareCattribute = (cattribute) => {
     if(catData[cattribute] > opponent.current[cattribute]) {
       setResult('Your cat won!')
+      addWins(catData)
+      catData.wins += 1
     } else if (catData[cattribute] === opponent.current[cattribute]) {
       setResult(`It's a draw!`)
     } else {
       setResult('Your cat lost!')
+      addWins(opponent.current)
+      opponent.current.wins += 1
     }
   }
 
+  const addWins = (winner) => {
+    let winCount = winner.wins + 1
+
+    axios.put(`http://localhost:8082/api/cats/${winner.catName}`, 
+    {wins: winCount, timesSpotted: winner.timesSpotted })
+    .catch(error => {console.log(error)})
+  }
+
   const reset = () => {
+    localStorage.setItem("catInPlay", JSON.stringify(catData))
     opponent.current = newOpponent()
     setResult('')
   }

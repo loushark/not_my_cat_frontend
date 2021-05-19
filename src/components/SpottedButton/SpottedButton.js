@@ -1,15 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { AuthContext } from "../../App";
+import React from 'react';
 import axios from 'axios';
-import Cat from '../catCard/catCard.js'
 
 
-const SpottedButton = ( { timesSpotted, catName } ) => {
+const SpottedButton = ( { wins, timesSpotted, catName } ) => {
 
   const onClickHandler = () => {
-    console.log(timesSpotted)
     timesSpotted += 1
-    axios.put(`http://localhost:8082/api/cats/${catName}`, {timesSpotted: (timesSpotted)})
+    axios.put(`http://localhost:8082/api/cats/${catName}`, {timesSpotted: timesSpotted, wins: wins})
     .then(response => {
       console.log(response)
       if (response.status === 200) {
