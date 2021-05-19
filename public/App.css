@@ -1,6 +1,6 @@
-@fontface {
+@font-face {
   font-family: 'Fredoka One', sans-serif;
-  src: url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap'),
+  src: url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
   }
 
 html {
@@ -268,10 +268,6 @@ input {
   height: 30px;
 }
 
-.gm-style-iw-d {
-  /* make this smaller, and cat card responsive to size change */
-}
-
 /* welcome message */
 
 .speech-bubble h3 {
@@ -319,7 +315,6 @@ input {
   left: -11px;
   top: 10px;
 }
-
 
 /* trees */
 

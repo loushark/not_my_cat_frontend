@@ -1,6 +1,6 @@
-@fontface {
-  font-family: 'Fredoka One', sans-serif;
-  src: url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap'),
+@font-face {
+  font-family: "Fredoka One", sans-serif;
+  src: url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
   }
 
 
@@ -161,7 +161,6 @@ th {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
 }
 
 .Cat-name {
@@ -288,7 +287,6 @@ input {
   color: black;
 }
 
-
 /*Maps*/
 
 .cat-map {
@@ -300,8 +298,17 @@ input {
   height: 30px;
 }
 
-.gm-style-iw-d {
-  /* make this smaller, and cat card responsive to size change */
+.gm-style .gm-style-iw-c {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.gm-style .gm-style-iw-d {
+  overflow: hidden !important;
+}
+
+.gm-ui-hover-effect {
+  transform: translateX(-25px) translateY(35px);
 }
 
 /* welcome message */
@@ -352,7 +359,6 @@ input {
   top: 10px;
 }
 
-
 /* trees */
 
 .logo2 {
@@ -393,17 +399,4 @@ padding-top:10px;
 60% {
   transform: translateY(-10px);
   }
-}
-
-.gm-style .gm-style-iw-c {
-  background-color: transparent;
-  box-shadow: none;
-}
-
-.gm-style .gm-style-iw-d {
-  overflow: hidden !important;
-}
-
-.gm-ui-hover-effect {
-  transform: translateX(-25px) translateY(35px);
 }

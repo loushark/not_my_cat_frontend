@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import CatCard from '../catCard/catCard'
 import useCats from '../../hooks/useCats'
 import { useLocation } from 'react-router-dom'
