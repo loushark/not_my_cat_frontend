@@ -75,6 +75,17 @@ a {
   font-size: 25px;
 }
 
+.Cat-wins {
+  position: absolute;
+  transform: translate(15px, 10px);
+}
+
+.Cat-crown {
+  z-index: 100 !important;
+  position: absolute;
+  transform: translate(-130px, 40px) rotate(318deg) !important; 
+}
+
 .cat-list {
   width: 100%;
   margin-right: auto;
@@ -382,4 +393,17 @@ padding-top:10px;
 60% {
   transform: translateY(-10px);
   }
+}
+
+.gm-style .gm-style-iw-c {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.gm-style .gm-style-iw-d {
+  overflow: hidden !important;
+}
+
+.gm-ui-hover-effect {
+  transform: translateX(-25px) translateY(35px);
 }
