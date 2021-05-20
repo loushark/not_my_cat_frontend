@@ -34,6 +34,7 @@ const SignUpForm = (props) => {
     })
     .catch(error => {
       setInvalid(true)
+      setTimeout(() => {setInvalid(false)}, 3000)
       console.log(error)
     })
   }
