@@ -71,8 +71,11 @@ const Cat =  ( { catName, user_id, cattitude, floof, chonk, image, wins, timesSp
         </table>
       </div>
       <div className='Cat-footer'>
-        {state.user === user_id ? <><DeleteButton catName={catName} /><PlayGameButton {...catData}/></> : null }
         <SpottedButton timesSpotted={timesSpotted} wins={wins} catName={catName} />
+        {state.user === user_id ? <DeleteButton catName={catName} /> : null }
+      </div>
+      <div className='Cat-game-footer'>
+        {document.URL !== "http://localhost:3000/top-cat" && state.user === user_id ? <PlayGameButton {...catData}/> : null }
       </div>
     </div>
   )

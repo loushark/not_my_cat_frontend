@@ -10,6 +10,7 @@ const SignUpForm = (props) => {
 
   const [invalid, setInvalid] = useState(false)
   const [signUp, setSignUp] = useState(false)
+  const [missing, setMissing] = useState(false)
 
   const onChange = (element) => {
     setUserData((prevState) => ({...prevState, [element.target.name]: element.target.value }))
@@ -17,15 +18,19 @@ const SignUpForm = (props) => {
 
   const signup = (element) => {
     element.preventDefault()
+
+    const { _id, email, password } = userData
+    if( _id || email || password === '' ) {
+      return setMissing(true)
+    }
     
     axios.post('http://localhost:8082/api/users', userData)
     .then(response => {
       if (response.status !== 500) {
         setSignUp(true)
-        setTimeout(2000)
+        setTimeout(props.history.push("/"), 2000)
       }
     })
-    .then(props.history.push("/"))
     .catch(error => {
       setInvalid(true)
       console.log(error)
@@ -35,8 +40,9 @@ const SignUpForm = (props) => {
   return (
     <form className="SignUp-form" onSubmit={element => signup(element)}>
       <h3>Sign up to add your cats!</h3>
-      {invalid && <strong>Email has already been used!</strong>}
-      {signUp && <strong>Sign-Up successful!</strong>}
+      {missing && <><strong>All fields must be populated</strong><br></br></>}
+      {invalid && <><strong>Email has already been used!</strong><br></br></>}
+      {signUp && <><strong>Sign-Up successful!</strong><br></br></>}
       <input type="text"
         name="_id"
         placeholder="Username"

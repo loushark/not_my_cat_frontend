@@ -94,7 +94,7 @@ export default function App(props) {
             <Route path= '/new-cat' component={CreateCatCard} />
             <Route path= '/login' component={LoginForm} />
             <Route path= '/profile'>
-              <p className="latest-cats">Here are all your cats!</p>
+              <h1 className="latest-cats">Here are all your cats!</h1>
               <UserProfile />
             </Route>
             <Route path= '/top-cat'>
@@ -106,8 +106,8 @@ export default function App(props) {
               </Route>
             </div>
           </div>
-          {!state.isAuthenticated ? <p className="latest-cats">Login to see all the latest cats</p>
-          : <p className="latest-cats">Here are all the finest picks!</p>}
+          {!state.isAuthenticated ? <h1 className="latest-cats">Login to see all the latest cats</h1>
+          : <h1 className="latest-cats">Here are all the finest picks!</h1>}
           <CatList props={state} list={listCats} />
         </Router>
       </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import deletecat from '../../svg/deletecatred_1.svg'
 
 const DeleteButton = ( { catName } ) => {
   const [deleteSuccess, setDeleteSuccess] = useState(false)
@@ -25,7 +26,7 @@ const DeleteButton = ( { catName } ) => {
 
   return (
     <>
-    <button className='button' onClick={() => {if(window.confirm('Are you sure you want to delete this cat?')) onClickHandler() }} >Delete Cat</button>
+    <img src={deletecat} className='delete-button' onClick={() => {if(window.confirm('Are you sure you want to delete this cat?')) onClickHandler() }} alt='Delete Cat' />
     </>
   )
 }

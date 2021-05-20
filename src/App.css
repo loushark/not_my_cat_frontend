@@ -71,8 +71,7 @@ a {
 /*catCard styling*/
 
 .latest-cats {
-  margin-top: 80px;
-  font-size: 25px;
+  font-size: 35px;
 }
 
 .Cat-wins {
@@ -111,10 +110,28 @@ a {
   box-shadow: 5px 5px 8px #888888;
 }
 
+.spotted-text {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.Cat-game-footer {
+  margin-top: 10px;
+  height: auto;
+}
+
 .Cat-table {
   margin: 20px;
   display: grid;
   justify-content: center;
+}
+
+.delete-button {
+  width: 40px;
+  height: auto;
+  position: absolute;
+  transform: translate(135px, -440px);
+  cursor: pointer;
 }
 
 th {
@@ -138,7 +155,7 @@ th {
 
 .Cat-footer {
   display: flex;
-  justify-content: center;
+  align-items: center;
 }
 
 .Cat-image-box {
@@ -295,7 +312,7 @@ input {
 /*Maps*/
 
 .cat-map {
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .marker {

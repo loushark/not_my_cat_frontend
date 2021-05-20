@@ -87,13 +87,13 @@ const TopCat = () => {
         { result !== '' ? 
         <>
           <h1>{result}</h1>
-          <button id='playAgain' onClick={() => reset()}>Play again?</button>
+          <button id='playAgain' className='button-nav' onClick={() => reset()}>Play again?</button>
         </>
         : 
         <> 
-          <button id='cattitude' onClick={element => compareCattribute(element.target.id)}>Cattitude</button>
-          <button id='floof' onClick={element => compareCattribute(element.target.id)}>Floofiness</button>
-          <button id='chonk' onClick={element => compareCattribute(element.target.id)}>Chonk</button> 
+          <button id='cattitude' className='button-nav' onClick={element => compareCattribute(element.target.id)}>Cattitude</button>
+          <button id='floof' className='button-nav' onClick={element => compareCattribute(element.target.id)}>Floofiness</button>
+          <button id='chonk' className='button-nav' onClick={element => compareCattribute(element.target.id)}>Chonk</button> 
         </>
         }
       </div>

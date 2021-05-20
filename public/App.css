@@ -125,6 +125,11 @@ th {
   justify-content: center;
 }
 
+.Cat-game-footer {
+  margin-top: 10px;
+  height: auto;
+}
+
 .Cat-image-box {
   display: flex;
   margin: 0 auto;
@@ -392,7 +397,7 @@ padding-top:10px;
 
 .topcat-buttons-box {
   width: 160px;
-  height: 250px;
+  height: 300px;
   background-color: white;
   border: 2px dashed #8551a8;
   border-radius: 15px;

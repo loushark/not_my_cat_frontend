@@ -18,7 +18,7 @@ const SpottedButton = ( { wins, timesSpotted, catName } ) => {
 
   return (
     <>
-      {timesSpotted === 1 ? <p>Spotted {timesSpotted} time</p> : <p>Spotted {timesSpotted} times</p>}
+      {timesSpotted === 1 ? <p className='spotted-text'>Spotted {timesSpotted} time</p> : <p className='spotted-text'>Spotted {timesSpotted} times</p>}
       <button onClick={() => onClickHandler() } className='button'>Spotted!</button>
     </>
   );
