@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { AuthContext } from "../../App";
 import axios from 'axios';
-import Cat from '../catCard/catCard.js'
+import Cat from '../catCard/catCard.js';
 
 const CreateCatCard = (props) => {
 
@@ -33,8 +33,7 @@ const CreateCatCard = (props) => {
       .then((result) => {
         setPostData((prevState) => ({...prevState, image: result}))
       })
-    }
-    else {
+    } else {
     setPostData((prevState) => ({...prevState, [element.target.name]: element.target.value }))
     }
   }
@@ -76,11 +75,11 @@ const CreateCatCard = (props) => {
     const total = parseFloat(cattitude) + parseFloat(floof) + parseFloat(chonk)
     if (total > 20) {
       setOverSpent(true)
-      return setTimeout(() => {setOverSpent(false)}, 2000)
+      return setTimeout(() => {setOverSpent(false)}, 3000)
     } 
     if (total < 20) {
       setUnderSpent(true)
-      return setTimeout(() => {setUnderSpent(false)}, 2000)
+      return setTimeout(() => {setUnderSpent(false)}, 3000)
     }
 
     axios.post('http://127.0.0.1:8082/api/cats', { postData, accessToken: state.accessToken })
@@ -92,7 +91,7 @@ const CreateCatCard = (props) => {
     })
     .catch(error => {
       setInvalid(true)
-      setTimeout(() => {setInvalid(false)}, 2000)
+      setTimeout(() => {setInvalid(false)}, 3000)
       console.log(error)
     })
   }
@@ -105,9 +104,9 @@ const CreateCatCard = (props) => {
     <form className="newcat-form" onSubmit={element => createCat(element)}>
       <h3>Add a cat!</h3>
       <h4>Distribute your cats 20 points between the 3 cattributes, Cattitude, Floofiness and Chonk! Add a picture too!</h4>
-      {underSpent && <strong className='possitive-alert'>You still have points to allocate!</strong>}
-      {overSpent && <strong className='negative-alert'>You have overspent on cattributes! 20 Max!</strong>}
-      {invalid && <strong className='negative-alert'>You have missed a cattribute!</strong>}
+      {underSpent && <><strong className='positive-alert'>You still have points to allocate!</strong><br></br></>}
+      {overSpent && <><strong className='negative-alert'>You have overspent on cattributes! 20 Max!</strong><br></br></>}
+      {invalid && <><strong className='negative-alert'>You have missed a cattribute!</strong><br></br></>}
       <input type="text" name="catName" placeholder="Name of Cat"
         onChange={element => onChange(element)}
       />
