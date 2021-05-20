@@ -22,7 +22,8 @@ const CreateCatCard = (props) => {
   })
 
   const [invalid, setInvalid] = useState(false)
-  const [cattributes, setCattributes] = useState(true)
+  const [overSpent, setOverSpent] = useState(false)
+  const [underSpent, setUnderSpent] = useState(false)
 
   const onChange = (element) => {
     if (element.target.id === "file") {
@@ -73,11 +74,14 @@ const CreateCatCard = (props) => {
 
     const { cattitude, floof, chonk } = postData
     const total = parseFloat(cattitude) + parseFloat(floof) + parseFloat(chonk)
-    if ( total > 20) {
-        return setCattributes(false)
-      } else {
-        setCattributes(true)
-      }
+    if (total > 20) {
+      setOverSpent(true)
+      return setTimeout(() => {setOverSpent(false)}, 2000)
+    } 
+    if (total < 20) {
+      setUnderSpent(true)
+      return setTimeout(() => {setUnderSpent(false)}, 2000)
+    }
 
     axios.post('http://127.0.0.1:8082/api/cats', { postData, accessToken: state.accessToken })
     .then(response => {
@@ -88,6 +92,7 @@ const CreateCatCard = (props) => {
     })
     .catch(error => {
       setInvalid(true)
+      setTimeout(() => {setInvalid(false)}, 2000)
       console.log(error)
     })
   }
@@ -100,7 +105,8 @@ const CreateCatCard = (props) => {
     <form className="newcat-form" onSubmit={element => createCat(element)}>
       <h3>Add a cat!</h3>
       <h4>Distribute your cats 20 points between the 3 cattributes, Cattitude, Floofiness and Chonk! Add a picture too!</h4>
-      {!cattributes && <strong className='negative-alert'>You have overspent on cattributes! 20 Max!</strong>}
+      {underSpent && <strong className='possitive-alert'>You still have points to allocate!</strong>}
+      {overSpent && <strong className='negative-alert'>You have overspent on cattributes! 20 Max!</strong>}
       {invalid && <strong className='negative-alert'>You have missed a cattribute!</strong>}
       <input type="text" name="catName" placeholder="Name of Cat"
         onChange={element => onChange(element)}
