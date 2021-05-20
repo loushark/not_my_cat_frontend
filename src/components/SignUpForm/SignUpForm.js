@@ -20,8 +20,11 @@ const SignUpForm = (props) => {
     element.preventDefault()
 
     const { _id, email, password } = userData
-    if( _id || email || password === '' ) {
+    if( _id === '' || email === '' || password === '' ) {
+      console.log(userData)
       return setMissing(true)
+    } else {
+      setMissing(false)
     }
     
     axios.post('http://localhost:8082/api/users', userData)
