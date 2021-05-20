@@ -98,8 +98,8 @@ const CreateCatCard = (props) => {
     </div>
     <form className="newcat-form" onSubmit={element => createCat(element)}>
       <h3>Add a cat!</h3>
-      {!cattributes && <strong>You have overspent on cattributes! 20 Max!</strong>}
-      {invalid && <strong>You have missed a cattribute!</strong>}
+      {!cattributes && <strong className='negative-alert'>You have overspent on cattributes! 20 Max!</strong>}
+      {invalid && <strong className='negative-alert'>You have missed a cattribute!</strong>}
       <input type="text" name="catName" placeholder="Name of Cat"
         onChange={element => onChange(element)}
       />

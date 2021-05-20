@@ -42,9 +42,9 @@ const SignUpForm = (props) => {
   return (
     <form className="SignUp-form" onSubmit={element => signup(element)}>
       <h3>Sign up to add your cats!</h3>
-      {missing && <><strong>All fields must be populated</strong><br></br></>}
-      {invalid && <><strong>Email has already been used!</strong><br></br></>}
-      {signUp && <><strong>Sign-Up successful!</strong><br></br></>}
+      {missing && <><strong className='negative-alert'> All fields must be populated </strong><br></br></>}
+      {invalid && <><strong className='negative-alert'> Email has already been used! </strong><br></br></>}
+      {signUp && <><strong className='positive-alert'> Sign-Up successful! </strong><br></br></>}
       <input type="text"
         name="_id"
         placeholder="Username"
