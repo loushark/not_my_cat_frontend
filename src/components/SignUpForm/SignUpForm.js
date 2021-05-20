@@ -21,17 +21,15 @@ const SignUpForm = (props) => {
 
     const { _id, email, password } = userData
     if( _id === '' || email === '' || password === '' ) {
-      console.log(userData)
-      return setMissing(true)
-    } else {
-      setMissing(false)
+      setMissing(true)
+      return setTimeout(() => {setMissing(false)}, 3000)
     }
     
     axios.post('http://localhost:8082/api/users', userData)
     .then(response => {
       if (response.status !== 500) {
         setSignUp(true)
-        setTimeout(props.history.push("/"), 2000)
+        setTimeout(() => {props.history.push("/")}, 2000)
       }
     })
     .catch(error => {
