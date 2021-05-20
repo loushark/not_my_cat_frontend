@@ -83,7 +83,7 @@ a {
 .Cat-crown {
   z-index: 100 !important;
   position: absolute;
-  transform: translate(-130px, 40px) rotate(318deg) !important; 
+  transform: translate(-130px, 40px) rotate(318deg) !important;
 }
 
 .cat-list {
@@ -173,6 +173,11 @@ th {
 
 .grow:hover {
   transform: scale(1.05) rotateZ(2deg);
+}
+
+.paw-print {
+  height: 15px;
+  margin-right: 7px;
 }
 
 /* form aspects styling, for login, sign up, create cat */

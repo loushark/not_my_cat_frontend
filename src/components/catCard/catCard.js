@@ -7,6 +7,7 @@ import crown3 from '../../svg/crown3outline.svg'
 import spareImg from '../../svg/cat1.svg'
 import { AuthContext } from '../../App'
 import { DeleteButton, PlayGameButton } from '../catCardButtons/catCardButtons.js'
+import { ReactComponent as PawPrint } from '../../svg/paw.svg'
 
 const Cat =  ( { catName, user_id, cattitude, floof, chonk, image, wins, timesSpotted } ) => {
   const { state } = React.useContext(AuthContext)
@@ -30,12 +31,12 @@ const Cat =  ( { catName, user_id, cattitude, floof, chonk, image, wins, timesSp
     if (wins > 10 && wins < 20) {
       return crown1
     } else if (wins > 20 && wins < 30) {
-      return crown2 
+      return crown2
     } else if (wins > 30) {
       return crown3
     }
   }
-  
+
   return (
     <div className="Cat-id grow">
       {wins > 10 ? <img className='Cat-crown' src={crowns()} alt='crown'/> : null}
@@ -50,7 +51,7 @@ const Cat =  ( { catName, user_id, cattitude, floof, chonk, image, wins, timesSp
       <div className="Cat-image-box">
          <img src={image} className="Cat-image" alt="cat"/>
       </div>
-      <h2 className="Cat-name">🐾 {catName}</h2>
+      <h2 className="Cat-name"><PawPrint className="paw-print" />{catName}</h2>
       <div className="Cat-attributes">
         <table className="Cat-table">
           <tbody>
