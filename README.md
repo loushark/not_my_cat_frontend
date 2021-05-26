@@ -32,6 +32,7 @@ The webapp that allows you to save all the best cats you see while out on walks!
 - Express(.js) - Node.js web framework
 - React(.js) - a client-side JavaScript framework
 - Node(.js) - a JavaScript web server
+- Backend repo: https://github.com/loushark/not_my_cat_backend
 
 ----
   
