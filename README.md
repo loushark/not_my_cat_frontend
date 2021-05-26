@@ -1,6 +1,7 @@
 # Not My Cat  ✧/ᐠ-ꞈ-ᐟ\
 
- 
+ ![notmycatgif](notmycatdemo.gif)
+   
 https://www.npmjs.com/package/@wojtekmaj/enzyme-adapter-react-17
 
 https://github.com/enzymejs/enzyme/issues/2429
