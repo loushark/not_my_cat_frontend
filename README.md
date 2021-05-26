@@ -1,7 +1,6 @@
 # Not My Cat  ✧/ᐠ-ꞈ-ᐟ\
 
- ![notmycatlogo](notmycatlogo.png)
- ![notmycatgif](notmycatdemo.gif)
+ <img src="/notmycatlogo.png" width="300">    ![notmycatgif](notmycatdemo.gif)
    ```
 ===============
 - NOT MY CAT -  
