@@ -1,4 +1,4 @@
-# <img src="/notmycatlogo.png" width="100"> ________________________NOT MY CAT  ✧/ᐠ-ꞈ-ᐟ\
+# <img src="/notmycatlogo.png" width="100"> _________________NOT MY CAT  ✧/ᐠ-ꞈ-ᐟ\
 ![notmycatgif](notmycatdemo.gif)
     
    ```
